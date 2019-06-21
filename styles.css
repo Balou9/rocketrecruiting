@@ -3,27 +3,20 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#container {
-  width: 80%;
-  height: 300px;
+#flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   margin: 0px auto;
-  text-align: center
 }
 
 #businessContainer {
-  width: 250px;
-  height: 300px;
-  float: left;
-  margin-left: 200px;
+  width: 300px;
 }
 
 #itTalentsContainer {
-  width: 250px;
-  height: 300px;
-  float: right;
-  margin-right: 200px;
-}
-
-#clear {
-  clear: both;
+  width: 300px;
 }
