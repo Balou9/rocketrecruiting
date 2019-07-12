@@ -1,6 +1,26 @@
 body {
-  text-align: center;
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+#rocketHeader {
+  font-size: 50px;
+}
+
+#rocketImage {
+  width: 100%;
+}
+
+#imageContainer {
+  position: relative;
+}
+
+#textBlock {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #ebf0f7;
+  background-color: #2d73e3;
 }
 
 #flexContainer {
