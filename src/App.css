@@ -2,10 +2,22 @@
 
 }
 
+.circle {
+  animation-name: App-circle-spin;
+  animation-iteration-count: infinite;
+  animation-duration: 20;
+  animation-timing-function: linear;
+  height: 30vmin;
+}
+
 .appLogo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  animation-name: App-logo-spin;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  height: 20vmin;
   pointer-events: none;
+  align-items: center;
 }
 
 .appHeader {
@@ -20,11 +32,42 @@
   color: white;
 }
 
+.circle1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 40vmin;
+  width: 40vmin;
+  border-radius: 50%;
+  border: 1px solid orange;
+}
+
+.circle2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 30vmin;
+  width: 30vmin;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+
+.img {
+
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15vw;
+  padding-bottom: 15vw;
+}
+
 .titleContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 2vw;
   align-items: flex-end;
 }
 
@@ -55,6 +98,7 @@
   flex: 1;
   padding-left: 2vw;
 }
+
 
 @keyframes App-logo-spin {
   from {
