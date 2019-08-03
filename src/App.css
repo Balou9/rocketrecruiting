@@ -1,14 +1,14 @@
-.App {
+.app {
 
 }
 
-.App-logo {
+.appLogo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
+.appHeader {
   background-color: #000000;
   padding: 0vw 10vw 0vw 10vw;
   min-height: 100vh;
@@ -20,54 +20,42 @@
   color: white;
 }
 
-/* .Instruction-Container {
+.titleContainer {
   display: flex;
-  flex-direction: column;
-  padding: 0vw 15vw 0vw 15vw;
+  flex-direction: row;
   justify-content: center;
-  width: 40vw;
-  padding-bottom: 2vw;
   padding-top: 2vw;
+  align-items: flex-end;
 }
 
-.Developer-Instruction .Business-Instruction {
-  flex: 1;
-}
-
-.Developer-Title .Business.Title {
-
-}
-
-.Developer-Text .Business.Text {
-
-} */
-
-.Instruction-Container {
+.instructionContainer {
   display: flex;
   flex-direction: row;
   padding: 0vw 10vw 0vw 10vw;
   justify-content: flex-start;
-  padding-bottom: 2vw;
-  padding-top: 2vw;
   align-items: baseline;
 }
 
-.Developer-Instruction {
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 2vw;
+  align-items: baseline;
+}
+
+.developerTitle, .developerLink, .developerInstruction {
+  border-right: 1px solid #000000;
   flex: 1;
   text-align: right;
   padding-right: 2vw;
 }
 
-.Business-Instruction {
+.businessTitle, .businessInstruction, .businessLink {
   flex: 1;
   padding-left: 2vw;
-  height: inherit;
 }
 
-.businessLink {
-  display: flex;
-  margin-top: auto;
-}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
