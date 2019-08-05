@@ -5,15 +5,10 @@ function App() {
   return (
     <div className="app">
       <header className="appHeader">
-        <div className="circles">
-          <div className="circle1">
+          <div className="outterCircle">
+            <div className="innerCircle">
+            </div>
           </div>
-          <div className="circle2">
-          </div>
-        </div>
-      <br/>
-      <br/>
-      <br/>
       <h2 className="rocketHeader">Rocket Recruiting</h2>
       <h3 className="rocketDescription">Recruiting West African Developers for European Businesses</h3>
       </header>
@@ -29,7 +24,6 @@ function App() {
                 You're welcome to add links like Github or other code to convince us
                 why you should be part of the developer pool.
                 </p>
-
             </div>
             <div className="businessInstruction">
               <p className="businessText">

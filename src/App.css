@@ -32,26 +32,27 @@
   color: white;
 }
 
-.circle1 {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+
+.outterCircle {
+  position: relative;
+  border-radius: 50%;
   height: 40vmin;
   width: 40vmin;
-  border-radius: 50%;
   border: 1px solid orange;
+  animation: outterCircle-spin 8s linear 0s infinite;
 }
 
-.circle2 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 30vmin;
-  width: 30vmin;
+.innerCircle {
+  position: absolute;
   border-radius: 50%;
+  height: 70%;
+  width: 70%;
   border: 1px solid red;
+  top: 50%;
+  left: 50%;
+  margin: -35% 0% 0% -35%;
+  animation: innerCircle-spin 8s linear 0s infinite;
 }
-
 
 .img {
 
@@ -100,11 +101,32 @@
 }
 
 
-@keyframes App-logo-spin {
+@keyframes innerCircle-spin {
   from {
-    transform: rotate(0deg);
+    transform:
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform:
+    rotateX(720deg)
+    rotateY(1000deg)
+    rotateZ(720deg);
+  }
+}
+
+@keyframes outterCircle-spin {
+  from {
+    transform:
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg);
+  }
+  to {
+    transform:
+    rotateX(1000deg)
+    rotateY(720deg)
+    rotateZ(1000deg);
   }
 }
