@@ -5,10 +5,16 @@ function App() {
   return (
     <div className="app">
       <header className="appHeader">
-          <div className="outterCircle">
-            <div className="innerCircle">
-            </div>
-          </div>
+        <div className="animation">
+        <svg className="container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" vectorEffect="non-scaling-stroke">
+          <circle className="circleFrame1"></circle>
+          <circle className="circleFrame2"></circle>
+            <g>
+            <circle className="circle1"></circle>
+            <circle className="circle2"></circle>
+            </g>
+          </svg>
+        </div>
       <h2 className="rocketHeader">Rocket Recruiting</h2>
       <h3 className="rocketDescription">Recruiting West African Developers for European Businesses</h3>
       </header>

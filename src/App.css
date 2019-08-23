@@ -2,13 +2,13 @@
 
 }
 
-.circle {
+/* .circle {
   animation-name: App-circle-spin;
   animation-iteration-count: infinite;
   animation-duration: 20;
   animation-timing-function: linear;
   height: 30vmin;
-}
+} */
 
 .appLogo {
   animation-name: App-logo-spin;
@@ -38,16 +38,16 @@
   border-radius: 50%;
   height: 40vmin;
   width: 40vmin;
-  border: 1px solid orange;
+  border: 3px solid orange;
   animation: outterCircle-spin 8s linear 0s infinite;
 }
 
 .innerCircle {
   position: absolute;
   border-radius: 50%;
-  height: 70%;
-  width: 70%;
-  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  border: 5px solid red;
   top: 50%;
   left: 50%;
   margin: -35% 0% 0% -35%;
@@ -100,33 +100,149 @@
   padding-left: 2vw;
 }
 
+.animation {
+  display: grid;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  grid-template-columns: auto;
+}
 
-@keyframes innerCircle-spin {
-  from {
-    transform:
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg);
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.svg {
+
+}
+
+.container {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  transform: rotate3d(1,1,1,0deg);
+  vector-effect: non-scaling-stroke;
+  width: 192px;
+  height: 192px;
+  fill: none;
+  stroke: cyan;
+}
+
+.circleFrame1 {
+  cx: 32;
+  cy: 32;
+  r: 32;
+  fill: transparent;
+  stroke: none;
+  transform-origin: 0px 0px;
+}
+
+.circleFrame2 {
+  cx: 32;
+  cy: 32;
+  r: 30;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.5;
+  transform-origin: 0px 0px;
+  fill: none;
+  stroke: cyan;
+  animation-name: animation-outterC;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.circle2 {
+  cx: 32;
+  cy: 32;
+  r: 24;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transform-origin: 50% 50%;
+  fill: none;
+  stroke: cyan;
+  animation-name: animation-twinner, animation-twinnerC;
+  animation-duration: 4s,8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.circle1 {
+  cx: 32;
+  cy: 32;
+  r: 24;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transform-origin: 50% 50%;
+  fill: none;
+  stroke: cyan;
+  animation-name: animation-inner, animation-innerC;
+  animation-duration: 4s,8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animation-twinner {
+  50% {
+    transform: rotate3d(0,2,1,180deg);
   }
-  to {
-    transform:
-    rotateX(720deg)
-    rotateY(1000deg)
-    rotateZ(720deg);
+  100% {
+    transform: rotate3d(0,2,1,360deg);
   }
 }
 
-@keyframes outterCircle-spin {
-  from {
-    transform:
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg);
+@keyframes animation-inner {
+  50% {
+    transform: rotate3d(2,0,1,180deg);
   }
-  to {
-    transform:
-    rotateX(1000deg)
-    rotateY(720deg)
-    rotateZ(1000deg);
+  100% {
+    transform: rotate3d(2,0,1,360deg);
+  }
+}
+
+@keyframes animation-outterC {
+  0% {
+    stroke: #000272;
+  }
+  33% {
+    stroke: #a32f80;
+  }
+  66% {
+    stroke: #ff6363;
+  }
+  100% {
+    stroke: #000272;
+  }
+}
+
+@keyframes animation-twinnerC {
+  0% {
+    stroke: #9c2c2c;
+  }
+  33% {
+    stroke: #eb7070;
+  }
+  66% {
+    stroke: #a8ff3e;
+  }
+  100% {
+    stroke: #9c2c2c;
+  }
+}
+
+@keyframes animation-innerC {
+  0% {
+    stroke: #64e291;
+  }
+  33% {
+    stroke: #ff6363;
+  }
+  66% {
+    stroke: #eb7070;
+  }
+  100% {
+    stroke: #64e291;
   }
 }
