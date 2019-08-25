@@ -5,18 +5,24 @@ function App() {
   return (
     <div className="app">
       <header className="appHeader">
-        <div className="animation">
-        <svg className="container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" vectorEffect="non-scaling-stroke">
-          <circle className="circleFrame1"></circle>
-          <circle className="circleFrame2"></circle>
-            <g>
-            <circle className="circle1"></circle>
-            <circle className="circle2"></circle>
-            </g>
-          </svg>
-        </div>
-      <h2 className="rocketHeader">Rocket Recruiting</h2>
-      <h3 className="rocketDescription">Recruiting West African Developers for European Businesses</h3>
+      <div className="animationHeader">
+          <div className="animation">
+          <svg className="container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" vectorEffect="non-scaling-stroke">
+            <circle className="circleFrame1"></circle>
+            <circle className="circleFrame2"></circle>
+              <g>
+              <circle className="circle1"></circle>
+              <circle className="circle2"></circle>
+              </g>
+            </svg>
+          </div>
+          <div className="rocketHeader">
+            <h2 className="headerTitle">Rocket Recruiting</h2>
+            <h3 className="headerDescription">Recruiting West African Developers for European Businesses</h3>
+          </div>
+      </div>
+      <div className="linkSection">
+      </div>
       </header>
         <div className="appContainer">
           <div className="titleContainer">
