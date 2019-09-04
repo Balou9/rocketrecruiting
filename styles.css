@@ -1,23 +1,25 @@
 .body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Hepta Slab', serif;
+  /* -webkit-animation-delay: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear; */
 }
+
+/* @-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+} */
 
 a {
   color: blue;
   text-decoration: none;
 }
+
 a:hover {
-  color: red;
+  color: darkblue;
 }
-/* .appLogo {
-  animation-name: App-logo-spin;
-  animation-iteration-count: infinite;
-  animation-duration: 20s;
-  animation-timing-function: linear;
-  height: 20vmin;
-  pointer-events: none;
-  align-items: center;
-} */
 
 .appHeader {
   background-color: #000000;
@@ -52,7 +54,6 @@ a:hover {
   max-width: 100%;
   margin: 0;
   transform: rotate3d(1,1,1,0deg);
-  vector-effect: non-scaling-stroke;
   width: 192px;
   height: 192px;
   fill: none;
@@ -159,19 +160,51 @@ svg:not(:root) {
 }
 
 .serviceOutline {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  min-height: 80vh;
+  bottom: 80vh;
+}
 
+.serviceOutlineText {
+  max-width: 75vh;
 }
 
 .developerContainer {
   background-color: #000000;
   align-items: center;
-  text-align: center;
+  text-align: left;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(8px + 2vmin);
+}
+
+.developerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.developerInfo {
+  flex: 1;
+  padding-right: 5vw;
+}
+
+.developerCallTo {
+  flex: 1;
+  padding-left: 5vw;
+}
+
+.developerHelloLink {
+  display: flex;
+  min-height: 15vh;
+  align-items: center;
 }
 
 .companyContainer {
@@ -181,7 +214,25 @@ svg:not(:root) {
   flex-direction: column;
   min-height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
+}
+
+.companyContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  min-height: 80vh;
+}
+
+.companyInfo {
+  flex: 1;
+  padding-right: 5vw;
+}
+
+.companyCallTo {
+  flex: 1;
+  padding-left: 5vw;
 }
 
 .helloContainer {
@@ -196,8 +247,25 @@ svg:not(:root) {
   font-size: calc(10px + 2vmin);
 }
 
-.linkContainer {
-  font-size: calc(20px + 2vmin);
+.helloCallTo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.helloText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.helloLinkContainer {
+  flex: 1;
+  font-size: calc(30px + 2vmin);
+  min-height: 30vh;
 }
 
 .ourLink {
