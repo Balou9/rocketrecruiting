@@ -1,16 +1,6 @@
-.body {
-  font-family: 'Hepta Slab', serif;
-  /* -webkit-animation-delay: 0.1s;
-  -webkit-animation-name: fontfix;
-  -webkit-animation-duration: 0.1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear; */
+html {
+  font-family: "Manjari", sans-serif;
 }
-
-/* @-webkit-keyframes fontfix {
-    from { opacity: 1; }
-    to   { opacity: 1; }
-} */
 
 a {
   color: blue;
@@ -37,7 +27,6 @@ a:hover {
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  padding: 0vh 0 0vh 0;
 }
 
 .animation {
@@ -164,18 +153,41 @@ svg:not(:root) {
   flex-direction: row;
   text-align: center;
   align-items: center;
-  min-height: 80vh;
-  bottom: 80vh;
+  min-height: 30vh;
+  padding: 0vh 10vw 0vh 10vw;
 }
 
 .serviceOutlineText {
-  max-width: 75vh;
+
+}
+
+.jobProfileContainer {
+  display: flex;
+  padding: inherit;
+}
+
+.jobProfile{
+  width: 30vw;
+}
+
+.serviceCTA {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  max-width: 100vw;
+  padding: inherit;
+  min-height: 30vh;
+}
+
+.serviceDeveloperCTA, .serviceCompanyCTA {
+  padding: 2vh 2.5vw 2vh 2.5vw;
 }
 
 .developerContainer {
   background-color: #000000;
   align-items: center;
-  text-align: left;
+  text-align: center;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -184,27 +196,16 @@ svg:not(:root) {
   font-size: calc(8px + 2vmin);
 }
 
-.developerContent {
+.developerContent, .companyContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  min-height: 80vh;
+  padding: 10vh 10vw 10vh 10vw;
 }
 
-.developerInfo {
-  flex: 1;
-  padding-right: 5vw;
-}
-
-.developerCallTo {
-  flex: 1;
-  padding-left: 5vw;
-}
-
-.developerHelloLink {
-  display: flex;
+.developerHelloLink, .companyHelloLink {
   min-height: 15vh;
-  align-items: center;
+  padding: 10vh 10vw 10vh 10vw;
 }
 
 .companyContainer {
@@ -215,24 +216,6 @@ svg:not(:root) {
   min-height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(8px + 2vmin);
-}
-
-.companyContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  min-height: 80vh;
-}
-
-.companyInfo {
-  flex: 1;
-  padding-right: 5vw;
-}
-
-.companyCallTo {
-  flex: 1;
-  padding-left: 5vw;
 }
 
 .helloContainer {
@@ -247,18 +230,15 @@ svg:not(:root) {
   font-size: calc(10px + 2vmin);
 }
 
-.helloCallTo {
+.helloCTA {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   align-items: center;
   min-height: 80vh;
 }
 
 .helloText {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   min-height: 40vh;
 }
 
