@@ -3,14 +3,13 @@ html {
 }
 
 body {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+
 }
 
 .appHeader {
   background-color: #000000;
   padding: 0vw 10vw 0vw 10vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +25,7 @@ body {
 }
 
 .animation {
-  flex: 1;
+  display: flex;
   align-items: center;
   box-sizing: border-box;
   margin: 0;
@@ -37,7 +36,7 @@ body {
 .container {
   display: block;
   max-width: 100%;
-  margin: 0;
+  margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
   width: 192px;
   height: 192px;
@@ -68,7 +67,7 @@ svg:not(:root) {
   transform-origin: 0px 0px;
   fill: none;
   stroke: cyan;
-  animation-name: animation-outterC;
+  animation-name: animation-outterColorPalatte;
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -83,7 +82,7 @@ svg:not(:root) {
   transform-origin: 50% 50%;
   fill: none;
   stroke: cyan;
-  animation-name: animation-twinner, animation-twinnerC;
+  animation-name: animation-twinner, animation-twinnerColorPalatte;
   animation-duration: 4s,8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -98,7 +97,7 @@ svg:not(:root) {
   transform-origin: 50% 50%;
   fill: none;
   stroke: cyan;
-  animation-name: animation-inner, animation-innerC;
+  animation-name: animation-inner, animation-innerColorPalatte;
   animation-duration: 4s,8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -144,8 +143,9 @@ svg:not(:root) {
 
 .linkSection {
   position: absolute;
+  justify-content: space-around;
   display: flex;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0 auto;
   min-width: 80vw;
   /* height: 20vw; */
@@ -158,7 +158,7 @@ svg:not(:root) {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
 }
@@ -190,19 +190,29 @@ svg:not(:root) {
   flex-direction: row;
   text-align: center;
   align-items: center;
+  justify-content: space-around;
   max-width: 100vw;
   padding: inherit;
   min-height: 30vh;
 }
 
-.serviceDeveloperCTA, .serviceCompanyCTA, .developerHelloLinkCTA, .companyHelloLinkCTA {
+@media screen and (max-width: 990px) {
+  .serviceCTA {
+    display: block;
+  }
+}
+
+.serviceDeveloperCTA,
+.serviceCompanyCTA,
+.developerHelloLinkCTA,
+.companyHelloLinkCTA {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2vh 2.5vw 2vh 2.5vw;
-  border: solid 1px #00008B;
-  border-radius: 8px;
-  color: #00008B;
+  border: solid 1px #0303ff;
+  border-radius: 4px;
+  color: #0303ff;
   background-color: transparent;
   text-decoration: none;
   width: 70%;
@@ -215,17 +225,17 @@ svg:not(:root) {
 .developerHelloLinkCTA:hover,
 .companyHelloLinkCTA:hover {
   color: white;
-  background-color: #00008B;
+  background-color: #0303ff;
   font-weight: bold;
 }
 
 .helloEmailLink {
   padding: 2vh 2.5vw 2vh 2.5vw;
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 50%;
   height: 10vh;
-  color: #00008b
+  color: #0303ff;
 }
 
 .helloEmailLink:hover {
@@ -237,10 +247,10 @@ svg:not(:root) {
   background-color: #000000;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
 }
@@ -258,12 +268,24 @@ svg:not(:root) {
   font-size: calc(14px + 2vmin);
 }
 
+.githubLink {
+  text-decoration: none;
+}
+
+.githubLink:hover {
+  font-weight: bold;
+}
+
+.githubLink:active {
+  color: #0303ff;
+}
+
 .companyContainer {
   display: flex;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
 }
@@ -272,10 +294,10 @@ svg:not(:root) {
   background-color: #000000;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
 }
@@ -298,9 +320,11 @@ svg:not(:root) {
   min-height: 30vh;
 }
 
-.ourLink {
-  color: #000000;;
+.rocketLink {
+  color: #000000;
 }
+
+
 
 @keyframes animation-twinner {
   50% {
@@ -320,7 +344,7 @@ svg:not(:root) {
   }
 }
 
-@keyframes animation-outterC {
+@keyframes animation-outterColorPalatte {
   0% {
     stroke: #000272;
   }
@@ -335,7 +359,7 @@ svg:not(:root) {
   }
 }
 
-@keyframes animation-twinnerC {
+@keyframes animation-twinnerColorPalatte {
   0% {
     stroke: #9c2c2c;
   }
@@ -350,7 +374,7 @@ svg:not(:root) {
   }
 }
 
-@keyframes animation-innerC {
+@keyframes animation-innerColorPalatte {
   0% {
     stroke: #64e291;
   }
