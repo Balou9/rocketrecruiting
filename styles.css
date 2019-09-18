@@ -6,6 +6,10 @@ body {
 
 }
 
+:root {
+  --link-color: #6666FF;
+}
+
 .appHeader {
   background-color: #000000;
   padding: 0vw 10vw 0vw 10vw;
@@ -20,8 +24,9 @@ body {
 
 .animationHeader {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: 100%;
+  height: 80vh;
 }
 
 .animation {
@@ -29,8 +34,15 @@ body {
   align-items: center;
   box-sizing: border-box;
   margin: 0;
-  min-width: 0;
+  max-width: 20vw;
   grid-template-columns: auto;
+}
+
+.animationBox {
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  justify-content: space-around;
 }
 
 .container {
@@ -41,7 +53,6 @@ body {
   width: 192px;
   height: 192px;
   fill: none;
-  stroke: cyan;
 }
 
 svg:not(:root) {
@@ -66,7 +77,6 @@ svg:not(:root) {
   opacity: 0.5;
   transform-origin: 0px 0px;
   fill: none;
-  stroke: cyan;
   animation-name: animation-outterColorPalatte;
   animation-duration: 8s;
   animation-timing-function: linear;
@@ -81,7 +91,6 @@ svg:not(:root) {
   vector-effect: non-scaling-stroke;
   transform-origin: 50% 50%;
   fill: none;
-  stroke: cyan;
   animation-name: animation-twinner, animation-twinnerColorPalatte;
   animation-duration: 4s,8s;
   animation-timing-function: linear;
@@ -96,7 +105,6 @@ svg:not(:root) {
   vector-effect: non-scaling-stroke;
   transform-origin: 50% 50%;
   fill: none;
-  stroke: cyan;
   animation-name: animation-inner, animation-innerColorPalatte;
   animation-duration: 4s,8s;
   animation-timing-function: linear;
@@ -105,7 +113,7 @@ svg:not(:root) {
 
 .rocketHeader {
   flex: 3;
-  max-width: 60vw;
+  max-width: 50vw;
 }
 
 .headerTitle {
@@ -116,12 +124,19 @@ svg:not(:root) {
 
 }
 
+.linkSection {
+  display: flex;
+  margin: 0 auto;
+  min-width: 80vw;
+  height: 10vh;
+  align-items: center;
+}
+
 .serviceLink, .developerLink, .companyLink, .helloLink {
-  color: blue;
+  color: var(--link-color);
   text-decoration: none;
   flex-basis: 100%;
   text-align: center;
-  min-width: 10vw;
 }
 
 .serviceLink:hover,
@@ -132,25 +147,10 @@ svg:not(:root) {
   font-weight: bold;
 }
 
-.headerLinkContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: inherit;
-  width: inherit;
-}
-
-.linkSection {
-  position: absolute;
-  justify-content: space-around;
-  display: flex;
-  color: #ffffff;
-  margin: 0 auto;
-  min-width: 80vw;
-  /* height: 20vw; */
-  padding: 0 0 20vh 0;
-  bottom: -35vh;
+.serviceHeader, .developerHeader, .companyHeader, .helloHeader {
+  text-align: center;
+  height: 10vh;
+  margin: auto;
 }
 
 .serviceContainer {
@@ -163,22 +163,31 @@ svg:not(:root) {
   font-size: calc(10px + 2vmin);
 }
 
+.serviceContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: calc(100vw - .serviceContainer.padding);
+}
+
 .serviceOutline {
   display: flex;
   flex-direction: row;
   text-align: center;
   align-items: center;
-  min-height: 30vh;
-  padding: 0vh 10vw 0vh 10vw;
+  width: inherit;
+  height: 25vh;
+  width: 80%;
 }
 
 .serviceOutlineText {
-  max-width: 50vw;
+
 }
 
 .jobProfileContainer {
   display: flex;
-  padding: inherit;
+  height: 25vh;
 }
 
 .jobProfile{
@@ -193,12 +202,15 @@ svg:not(:root) {
   justify-content: space-around;
   max-width: 100vw;
   padding: inherit;
-  min-height: 30vh;
+  height: 25vh;
+  /* min-height: 30vh; */
 }
 
 @media screen and (max-width: 990px) {
   .serviceCTA {
     display: block;
+    margin: auto;
+    height: 30vh;
   }
 }
 
@@ -210,14 +222,16 @@ svg:not(:root) {
   justify-content: center;
   align-items: center;
   padding: 2vh 2.5vw 2vh 2.5vw;
-  border: solid 1px #0303ff;
+  border: solid 1px var(--link-color);
   border-radius: 4px;
-  color: #0303ff;
+  color: var(--link-color);
   background-color: transparent;
   text-decoration: none;
   width: 70%;
   height: 10vh;
-  font-size: calc(14px + 2vmin);
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  margin: auto;
 }
 
 .serviceDeveloperCTA:hover,
@@ -225,31 +239,16 @@ svg:not(:root) {
 .developerHelloLinkCTA:hover,
 .companyHelloLinkCTA:hover {
   color: white;
-  background-color: #0303ff;
-  font-weight: bold;
-}
-
-.helloEmailLink {
-  padding: 2vh 2.5vw 2vh 2.5vw;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  width: 50%;
-  height: 10vh;
-  color: #0303ff;
-}
-
-.helloEmailLink:hover {
-  color: white;
-  font-weight: bold;
+  background-color: var(--link-color);
 }
 
 .developerContainer {
-  background-color: #000000;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
+  background-color: #000000;
   height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
@@ -259,13 +258,56 @@ svg:not(:root) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 10vw 10vh 10vw;
+  height: 100vh;
+  width: calc(100vw - .developerContainer.padding);
+}
+
+.developerDescription,
+.companyDescription {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: inherit;
+  height: 25vh;
+}
+
+.developerOutline {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: inherit;
+  height: 25vh;
+  width: 70%;
+}
+
+@media screen and (max-width: 700px) {
+  .developerOutline {
+    font-size: calc(8px + 2vmin)
+  }
 }
 
 .developerHelloLink, .companyHelloLink {
-  min-height: 15vh;
-  padding: 10vh 10vw 10vh 10vw;
+  height: 15vh;
   font-size: calc(14px + 2vmin);
+  margin: auto;
+}
+
+.companyContainer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0vw 10vw 0vw 10vw;
+  font-size: calc(10px + 2vmin);
+}
+
+.companyOutline {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: inherit;
+  height: 25vh;
 }
 
 .githubLink {
@@ -277,17 +319,7 @@ svg:not(:root) {
 }
 
 .githubLink:active {
-  color: #0303ff;
-}
-
-.companyContainer {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  height: 100vh;
-  padding: 0vw 10vw 0vw 10vw;
-  font-size: calc(10px + 2vmin);
+  color: var(--link-color);
 }
 
 .helloContainer {
@@ -310,21 +342,37 @@ svg:not(:root) {
   min-height: 80vh;
 }
 
-.helloText {
-  min-height: 40vh;
-}
-
 .helloLinkContainer {
   flex: 1;
-  font-size: calc(30px + 2vmin);
+  font-size: calc(26px + 2vmin);
   min-height: 30vh;
+}
+
+@media screen and (max-width: 580px) {
+  .helloLinkContainer {
+    flex: 1;
+    font-size: calc(16px + 2vmin);
+    height: 30vh;
+  }
+}
+
+.helloEmailLink {
+  padding: 2vh 2.5vw 2vh 2.5vw;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  width: 50%;
+  height: 10vh;
+  color: var(--link-color);
+}
+
+.helloEmailLink:hover {
+  color: white;
+  font-weight: bold;
 }
 
 .rocketLink {
   color: #000000;
 }
-
-
 
 @keyframes animation-twinner {
   50% {
@@ -346,7 +394,7 @@ svg:not(:root) {
 
 @keyframes animation-outterColorPalatte {
   0% {
-    stroke: #000272;
+    stroke: var(--link-color);
   }
   33% {
     stroke: #a32f80;
@@ -355,22 +403,22 @@ svg:not(:root) {
     stroke: #ff6363;
   }
   100% {
-    stroke: #000272;
+    stroke: var(--link-color);
   }
 }
 
 @keyframes animation-twinnerColorPalatte {
   0% {
-    stroke: #9c2c2c;
+    stroke: #ff6161;
   }
   33% {
     stroke: #eb7070;
   }
   66% {
-    stroke: #a8ff3e;
+    stroke: var(--link-color);
   }
   100% {
-    stroke: #9c2c2c;
+    stroke: #ff6161;
   }
 }
 
@@ -379,10 +427,10 @@ svg:not(:root) {
     stroke: #64e291;
   }
   33% {
-    stroke: #ff6363;
+    stroke: #eb7070;
   }
   66% {
-    stroke: #eb7070;
+    stroke: var(--link-color);
   }
   100% {
     stroke: #64e291;
