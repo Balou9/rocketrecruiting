@@ -206,13 +206,13 @@ svg:not(:root) {
   /* min-height: 30vh; */
 }
 
-@media screen and (max-width: 990px) {
+/* @media screen and (max-width: 990px) {
   .serviceCTA {
     display: block;
     margin: auto;
     height: 30vh;
   }
-}
+} */
 
 .serviceDeveloperCTA,
 .serviceCompanyCTA,
@@ -312,14 +312,11 @@ svg:not(:root) {
 
 .githubLink {
   text-decoration: none;
+  color: var(--link-color);
 }
 
 .githubLink:hover {
   font-weight: bold;
-}
-
-.githubLink:active {
-  color: var(--link-color);
 }
 
 .helloContainer {
