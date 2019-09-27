@@ -2,16 +2,77 @@ html {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
-body {
-
+* {
+    margin: 0;
+    padding: 0;
 }
 
 :root {
   --link-color: #6666FF;
+  --navBar-background-color: #add8e6;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  align-items: center;
+  padding: 3vh 1vw;
+  background-color: var(--navBar-background-color);
+}
+
+.navLinks {
+  display: flex;
+  min-width: 30vw;
+  /* margin: 0 auto; */
+  /* justify-content: flex-end; */
+}
+
+.navRocketLink {
+  cursor: pointer;
+}
+
+.navRocketLink {
+  text-decoration: none;
+  color: var(--black)
+}
+
+/* .navRocketLink:hover,
+.navLinks a:hover {
+  color: var(--white);
+} */
+
+.serviceLink, .developerLink, .companyLink {
+  color: var(--black);
+  text-decoration: none;
+  flex-basis: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contactCTA {
+  background-color: rgba(0,136,169,0.6);
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  padding: 9px 25px;
+  font-weight: bold;
+  color: var(--white)
+}
+
+.contactCTA:hover {
+  background-color: rgba(0,136,169,1);
 }
 
 .appHeader {
-  background-color: #000000;
+  background-color: var(--black);
   padding: 0vw 10vw 0vw 10vw;
   height: 100vh;
   display: flex;
@@ -43,6 +104,7 @@ body {
   align-items: center;
   height: 70vh;
   justify-content: space-around;
+  width: 70vw;
 }
 
 .container {
@@ -124,7 +186,7 @@ svg:not(:root) {
 
 }
 
-.linkSection {
+/* .linkSection {
   display: flex;
   margin: 0 auto;
   min-width: 80vw;
@@ -145,11 +207,11 @@ svg:not(:root) {
 .helloLink:hover {
   color: white;
   font-weight: bold;
-}
+} */
 
 .serviceHeader, .developerHeader, .companyHeader, .helloHeader {
   text-align: center;
-  height: 10vh;
+  height: 30vh;
   margin: auto;
 }
 
@@ -247,8 +309,8 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #ffffff;
-  background-color: #000000;
+  color: var(--white);
+  background-color: var(--black);
   height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
@@ -268,7 +330,7 @@ svg:not(:root) {
   text-align: center;
   align-items: center;
   width: inherit;
-  height: 25vh;
+  height: 15vh;
 }
 
 .developerOutline {
@@ -320,10 +382,10 @@ svg:not(:root) {
 }
 
 .helloContainer {
-  background-color: #000000;
+  background-color: var(--black);
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -345,7 +407,7 @@ svg:not(:root) {
   min-height: 30vh;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 675px) {
   .helloLinkContainer {
     flex: 1;
     font-size: calc(16px + 2vmin);
@@ -363,12 +425,8 @@ svg:not(:root) {
 }
 
 .helloEmailLink:hover {
-  color: white;
+  color: var(--white);
   font-weight: bold;
-}
-
-.rocketLink {
-  color: #000000;
 }
 
 @keyframes animation-twinner {
