@@ -31,8 +31,7 @@ html {
 .navLinks {
   display: flex;
   min-width: 30vw;
-  /* margin: 0 auto; */
-  /* justify-content: flex-end; */
+  margin: 0 auto;
 }
 
 .navRocketLink {
@@ -55,6 +54,7 @@ html {
   flex-basis: 100%;
   text-align: center;
   font-weight: bold;
+  width: 15vw;
 }
 
 .contactCTA {
@@ -86,6 +86,7 @@ html {
 .animationHeader {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   max-width: 100%;
   height: 80vh;
 }
@@ -210,9 +211,13 @@ svg:not(:root) {
 } */
 
 .serviceHeader, .developerHeader, .companyHeader, .helloHeader {
-  text-align: center;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 30vh;
   margin: auto;
+  font-size: calc(22px + 2vmin);
 }
 
 .serviceContainer {
@@ -229,14 +234,13 @@ svg:not(:root) {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 50vh;
   width: calc(100vw - .serviceContainer.padding);
 }
 
 .serviceOutline {
   display: flex;
   flex-direction: row;
-  text-align: center;
   align-items: center;
   width: inherit;
   height: 25vh;
@@ -264,7 +268,7 @@ svg:not(:root) {
   justify-content: space-around;
   max-width: 100vw;
   padding: inherit;
-  height: 25vh;
+  height: 20vh;
   /* min-height: 30vh; */
 }
 
@@ -289,7 +293,7 @@ svg:not(:root) {
   color: var(--link-color);
   background-color: transparent;
   text-decoration: none;
-  width: 70%;
+  width: 80%;
   height: 10vh;
   font-size: calc(10px + 2vmin);
   font-weight: bold;
@@ -320,17 +324,17 @@ svg:not(:root) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: flex-end;
+  height: 50vh;
   width: calc(100vw - .developerContainer.padding);
 }
 
-.developerDescription,
-.companyDescription {
+.developerDescription {
   display: flex;
   text-align: center;
   align-items: center;
   width: inherit;
-  height: 15vh;
+  height: 20vh;
 }
 
 .developerOutline {
@@ -338,20 +342,25 @@ svg:not(:root) {
   text-align: center;
   align-items: center;
   width: inherit;
-  height: 25vh;
+  height: 30vh;
   width: 70%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 830px) {
   .developerOutline {
-    font-size: calc(8px + 2vmin)
+    font-size: calc(7px + 2vmin)
   }
 }
 
 .developerHelloLink, .companyHelloLink {
-  height: 15vh;
+  height: 20vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 100vw;
+  padding: inherit;
   font-size: calc(14px + 2vmin);
-  margin: auto;
 }
 
 .companyContainer {
@@ -364,12 +373,20 @@ svg:not(:root) {
   font-size: calc(10px + 2vmin);
 }
 
+.companyDescription {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: inherit;
+  height: 20vh;
+}
+
 .companyOutline {
   display: flex;
   text-align: center;
   align-items: center;
   width: inherit;
-  height: 25vh;
+  height: 30vh;
 }
 
 .githubLink {
@@ -398,7 +415,7 @@ svg:not(:root) {
   flex-direction: row;
   text-align: center;
   align-items: center;
-  min-height: 80vh;
+  height: 70vh;
 }
 
 .helloLinkContainer {
