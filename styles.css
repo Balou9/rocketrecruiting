@@ -11,14 +11,10 @@ html {
 :root {
   --link-color: #6666FF;
   --navBar-background-color: #add8e6;
-  --black: #000000;
-  --white: #FFFFFF;
-  --light: 80;
-  --threshold: 50;
 }
 
 .appHeader {
-  background-color: var(--black);
+  background-color: #000000;
   padding: 0vw 10vw 0vw 10vw;
   height: 100vh;
   display: flex;
@@ -26,14 +22,13 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFFFF;
 }
 
 .animationHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* max-width: 100%; */
   height: 80vh;
 }
 
@@ -126,7 +121,7 @@ svg:not(:root) {
 }
 
 .headerTitle {
-
+  
 }
 
 .headerDescription {
@@ -154,6 +149,7 @@ svg:not(:root) {
     opacity: 0;
   }
 }
+
 .serviceHeaderLink,
 .developerHeaderLink,
 .companyHeaderLink,
@@ -248,17 +244,17 @@ svg:not(:root) {
   flex-direction: row;
   align-items: center;
   width: inherit;
-  height: 25vh;
+  height: 30vh;
   width: 80%;
 }
 
 .serviceOutlineText {
-
+  text-align: center;
 }
 
 .jobProfileContainer {
   display: flex;
-  height: 25vh;
+  height: 20vh;
 }
 
 .jobProfile{
@@ -310,7 +306,7 @@ svg:not(:root) {
 .serviceCompanyCTA:hover,
 .developerHelloLinkCTA:hover,
 .companyHelloLinkCTA:hover {
-  color: white;
+  color: #FFFFFF;
   background-color: var(--link-color);
 }
 
@@ -333,6 +329,7 @@ svg:not(:root) {
   right: -20%;
   transform: translate(0,-50%);
   transition: 0.5s;
+  font-size: calc(20px + 2vmin);
 }
 
 .serviceDeveloperCTA:hover .arrow,
@@ -355,8 +352,8 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: var(--white);
-  background-color: var(--black);
+  color: #FFFFFF;
+  background-color: #000000;
   height: 100vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
@@ -419,15 +416,17 @@ svg:not(:root) {
   display: flex;
   text-align: center;
   align-items: center;
+  height: 30vh;
   width: inherit;
-  height: 20vh;
 }
 
 .companyOutline {
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
-  width: inherit;
+  justify-content: space-around;
+  width: 60vw;
   height: 30vh;
 }
 
@@ -441,10 +440,10 @@ svg:not(:root) {
 }
 
 .helloContainer {
-  background-color: var(--black);
+  background-color: #000000;
   align-items: center;
   text-align: center;
-  color: var(--white);
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -484,7 +483,7 @@ svg:not(:root) {
 }
 
 .helloEmailLink:hover {
-  color: var(--white);
+  color: #FFFFFF;
   font-weight: bold;
 }
 
