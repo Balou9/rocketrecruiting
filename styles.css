@@ -9,8 +9,8 @@ html {
 }
 
 :root {
-  --link-color: #6666FF;
-  --navBar-background-color: #add8e6;
+  --link-color: rgba(102, 102, 255, 1);
+  --navBar-background-color: rgba(102, 102, 255, 0.2);
 }
 
 .appHeader {
@@ -44,7 +44,7 @@ html {
 .animationBox {
   display: flex;
   align-items: center;
-  height: 70vh;
+  height: 100vh;
   justify-content: space-around;
   width: 70vw;
 }
@@ -121,7 +121,7 @@ svg:not(:root) {
 }
 
 .headerTitle {
-  
+
 }
 
 .headerDescription {
@@ -160,34 +160,53 @@ svg:not(:root) {
   text-align: center;
 }
 
-
 .homeLink,
 .serviceLink,
 .developerLink,
 .companyLink,
 .helloLink {
-  /* --switch: calc((var(--light) - var(--threshold)) * -100%);
-  color: hsl(0, 0%, var(--switch)); */
+  display: flex;
+  flex-direction: column;
   color: var(--link-color);
+  align-items: center;
   text-decoration: none;
-  flex-basis: 5%;
-  font-weight: bold;
+  flex-basis: 90%;
+  text-align: center;
+  justify-content: center;
+  width: inherit;
+}
+
+.homeLink:hover,
+.serviceLink:hover,
+.developerLink:hover,
+.companyLink:hover,
+.helloLink:hover {
+  background-color: var(--navBar-background-color);
+}
+
+.home,
+.service,
+.developers,
+.companies,
+.hello {
+  font-size: 2vmin;
 }
 
 .navBar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0 auto;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 10vw;
   height: 100vh;
-  background-color: transparent;
+  background-color: var(--navBar-background-color);
   opacity: 0;
   animation: fadein 3s 5s forwards;
+  font-size: calc(3px+2vmin);
 }
 
 @keyframes fadein {
@@ -204,12 +223,6 @@ svg:not(:root) {
     opacity: 1;
   }
 }
-/* .serviceLink:hover,
-.developerLink:hover,
-.companyLink:hover,
-.helloLink:hover {
-  color: white;
-} */
 
 .serviceHeader, .developerHeader, .companyHeader, .helloHeader {
   display: flex;
@@ -271,16 +284,7 @@ svg:not(:root) {
   height: 30vh;
   width: 60vw;
   padding: inherit;
-  /* min-height: 30vh; */
 }
-
-/* @media screen and (max-width: 990px) {
-  .serviceCTA {
-    display: block;
-    margin: auto;
-    height: 30vh;
-  }
-} */
 
 .serviceDeveloperCTA,
 .serviceCompanyCTA,
@@ -416,7 +420,7 @@ svg:not(:root) {
   display: flex;
   text-align: center;
   align-items: center;
-  height: 30vh;
+  height: 20vh;
   width: inherit;
 }
 
