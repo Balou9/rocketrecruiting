@@ -205,7 +205,7 @@ svg:not(:root) {
   justify-content: flex-end;
   height: 20vh;
   margin: auto;
-  font-size: calc(22px + 2vmin);
+  font-size: calc(2px + 5vmin);
 }
 
 .serviceContainer {
@@ -277,7 +277,7 @@ svg:not(:root) {
   text-decoration: none;
   width: 90%;
   height: 10vh;
-  font-size: calc(2px + 3vmin);
+  font-size: 3vmin;
   font-weight: bold;
   margin: auto;
 }
@@ -367,6 +367,10 @@ svg:not(:root) {
   width: 70%;
 }
 
+.developerOutlineText {
+  font-size: calc(3vmin)
+}
+
 .developerHelloLink, .companyHelloLink {
   display: flex;
   text-align: center;
@@ -408,6 +412,9 @@ svg:not(:root) {
   height: 30vh;
 }
 
+.companyOutlineText {
+  font-size: calc(4px + 3vmin)
+}
 .githubLink {
   text-decoration: none;
   color: var(--link-color);
@@ -439,7 +446,6 @@ svg:not(:root) {
 
 .helloLinkContainer {
   flex: 1;
-  font-size: calc(2px + 4vmin);
   min-height: 30vh;
 }
 
@@ -456,6 +462,7 @@ svg:not(:root) {
   width: 50%;
   height: 10vh;
   color: var(--link-color);
+  font-size: calc(4px + 4vmin);
 }
 
 .helloEmailLink:hover {
@@ -564,6 +571,24 @@ svg:not(:root) {
     justify-content: center;
     font-size: 3vmin;
   }
+  .serviceOutlineText,
+  .companyOutlineText,
+  .jobProfile {
+    font-size: 3vmin;
+  }
+  .serviceDeveloperCTA,
+  .serviceCompanyCTA,
+  .developerHelloLinkCTA,
+  .companyHelloLinkCTA {
+    font-size: calc(6px + 2vmin);
+  }
+  .developerDescription,
+  .companyDescription {
+    font-size: calc(2px + 3vmin)
+  }
+  .helloEmailLink {
+    font-size: calc(6px + 3vmin);
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -578,7 +603,18 @@ svg:not(:root) {
   .developerContainer {
     font-size: calc(8px + 2vmin);
   }
-  .developerOutline {
-    font-size: calc(7px + 2vmin)
+  .serviceOutlineText,
+  .companyOutlineText,
+  .jobProfile {
+    font-size: calc(4px + 2vmin);
+  }
+  .serviceDeveloperCTA,
+  .serviceCompanyCTA,
+  .developerHelloLinkCTA,
+  .companyHelloLinkCTA {
+    font-size: calc(4px + 2vmin)
+  }
+  .helloEmailLink {
+    font-size: calc(4px + 3vmin);
   }
 }
