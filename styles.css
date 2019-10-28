@@ -231,7 +231,7 @@ svg:not(:root) {
   align-items: center;
   width: inherit;
   height: 30vh;
-  width: 80%;
+  width: 60vw;
 }
 
 .serviceOutlineText {
@@ -248,7 +248,7 @@ svg:not(:root) {
 .jobProfile{
   min-width: 30vw;
   list-style-type: none;
-  font-size: calc(4px + 3vmin)
+  font-size: calc(2px + 3vmin);
 }
 
 .serviceCTA {
@@ -368,7 +368,7 @@ svg:not(:root) {
 }
 
 .developerOutlineText {
-  font-size: calc(3vmin)
+  font-size: 3vmin;
 }
 
 .developerHelloLink, .companyHelloLink {
@@ -415,6 +415,7 @@ svg:not(:root) {
 .companyOutlineText {
   font-size: calc(4px + 3vmin)
 }
+
 .githubLink {
   text-decoration: none;
   color: var(--link-color);
@@ -462,7 +463,7 @@ svg:not(:root) {
   width: 50%;
   height: 10vh;
   color: var(--link-color);
-  font-size: calc(4px + 4vmin);
+  font-size: calc(10px + 4vmin);
 }
 
 .helloEmailLink:hover {
@@ -547,34 +548,37 @@ svg:not(:root) {
   }
   .animation {
     margin: 0 auto 0 auto;
+    height: 50vh;
   }
   .rocketHeader {
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0 auto;
     justify-content: center;
     text-align: center;
-    height: 50vh;
     max-width: 60vw;
+    height: 30vh;
+    margin: 0 auto 0 auto;
   }
   .headerTitle {
     display: flex;
-    height: 20vh;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 6vmin;
+    height: 20vh;
   }
   .headerDescription {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 30vh;
     justify-content: center;
     font-size: 3vmin;
+    height: 20vh;
   }
   .serviceOutlineText,
   .companyOutlineText,
   .jobProfile {
-    font-size: 3vmin;
+    font-size: calc(6px + 2vmin);
   }
   .serviceDeveloperCTA,
   .serviceCompanyCTA,
@@ -584,7 +588,10 @@ svg:not(:root) {
   }
   .developerDescription,
   .companyDescription {
-    font-size: calc(2px + 3vmin)
+    font-size: calc(4px + 3vmin)
+  }
+  .developerOutlineText {
+    font-size: calc(6px + 2vmin);
   }
   .helloEmailLink {
     font-size: calc(6px + 3vmin);
@@ -606,13 +613,16 @@ svg:not(:root) {
   .serviceOutlineText,
   .companyOutlineText,
   .jobProfile {
-    font-size: calc(4px + 2vmin);
+    font-size: calc(6px + 2vmin);
   }
   .serviceDeveloperCTA,
   .serviceCompanyCTA,
   .developerHelloLinkCTA,
   .companyHelloLinkCTA {
     font-size: calc(4px + 2vmin)
+  }
+  .developerOutlineText {
+    font-size: calc(3px + 2vmin);
   }
   .helloEmailLink {
     font-size: calc(4px + 3vmin);
