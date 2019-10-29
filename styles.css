@@ -75,8 +75,6 @@ svg:not(:root) {
   cx: 32;
   cy: 32;
   r: 30;
-  stroke-width: 2;
-  vector-effect: non-scaling-stroke;
   opacity: 0.5;
   transform-origin: 0px 0px;
   fill: none;
@@ -157,7 +155,7 @@ svg:not(:root) {
 .developers,
 .companies,
 .hello {
-  font-size: calc(6px + 1vmin);
+  font-size: calc(8px + 1vmin);
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -236,7 +234,7 @@ svg:not(:root) {
 
 .serviceOutlineText {
   text-align: center;
-  font-size: calc(4px + 3vmin);
+  font-size: calc(2px + 3vmin);
   font-weight: bold;
 }
 
@@ -352,6 +350,8 @@ svg:not(:root) {
   display: flex;
   text-align: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   width: inherit;
   height: 20vh;
   font-weight: bold;
@@ -364,7 +364,7 @@ svg:not(:root) {
   align-items: center;
   width: inherit;
   height: 30vh;
-  width: 70%;
+  width: 50vw;
 }
 
 .developerOutlineText {
@@ -396,6 +396,8 @@ svg:not(:root) {
   display: flex;
   text-align: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 20vh;
   width: inherit;
   font-weight: bold;
@@ -408,12 +410,12 @@ svg:not(:root) {
   text-align: center;
   align-items: center;
   justify-content: space-around;
-  width: 60vw;
+  width: 50vw;
   height: 30vh;
 }
 
 .companyOutlineText {
-  font-size: calc(4px + 3vmin)
+  font-size: calc(2px + 3vmin)
 }
 
 .githubLink {
@@ -584,7 +586,7 @@ svg:not(:root) {
   .serviceCompanyCTA,
   .developerHelloLinkCTA,
   .companyHelloLinkCTA {
-    font-size: calc(6px + 2vmin);
+    font-size: calc(4px + 2vmin);
   }
   .developerDescription,
   .companyDescription {
