@@ -48,7 +48,7 @@ html {
   width: 70vw;
 }
 
-.container {
+.logo {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -56,6 +56,17 @@ html {
   width: 192px;
   height: 192px;
   fill: none;
+}
+
+.miniLogo {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  transform: rotate3d(1,1,1,0deg);
+  width: 192px;
+  height: 192px;
+  fill: none;
+  background-color: var(--link-color);
 }
 
 svg:not(:root) {
@@ -275,7 +286,7 @@ svg:not(:root) {
   text-decoration: none;
   width: 90%;
   height: 10vh;
-  font-size: 3vmin;
+  font-size: calc(2px + 3vmin);
   font-weight: bold;
   margin: auto;
 }
@@ -314,7 +325,7 @@ svg:not(:root) {
 .serviceCompanyCTA:hover .arrow,
 .developerHelloLinkCTA:hover .arrow,
 .companyHelloLinkCTA:hover .arrow {
-  padding-right: 25%;
+  padding-right: 15%;
 }
 
 .serviceDeveloperCTA:hover .arrow:after,
@@ -586,7 +597,7 @@ svg:not(:root) {
   .serviceCompanyCTA,
   .developerHelloLinkCTA,
   .companyHelloLinkCTA {
-    font-size: calc(4px + 2vmin);
+    font-size: calc(6px + 2vmin);
   }
   .developerDescription,
   .companyDescription {
@@ -596,7 +607,7 @@ svg:not(:root) {
     font-size: calc(6px + 2vmin);
   }
   .helloEmailLink {
-    font-size: calc(6px + 3vmin);
+    font-size: calc(6px + 4vmin);
   }
 }
 
@@ -621,12 +632,12 @@ svg:not(:root) {
   .serviceCompanyCTA,
   .developerHelloLinkCTA,
   .companyHelloLinkCTA {
-    font-size: calc(4px + 2vmin)
+    font-size: calc(5px + 2vmin)
   }
   .developerOutlineText {
     font-size: calc(3px + 2vmin);
   }
   .helloEmailLink {
-    font-size: calc(4px + 3vmin);
+    font-size: calc(4px + 4vmin);
   }
 }
