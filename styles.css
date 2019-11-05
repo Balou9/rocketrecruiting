@@ -63,10 +63,9 @@ html {
   max-width: 100%;
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
-  width: 192px;
-  height: 192px;
+  width: 5vw;
+  height: 5vh;
   fill: none;
-  background-color: var(--link-color);
 }
 
 svg:not(:root) {
