@@ -547,13 +547,13 @@ svg:not(:root) {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 992px) {
   .home,
   .service,
   .developers,
   .companies,
   .hello {
-    font-size: calc(5px + 1vmin);
+    font-size: calc(2vmin);
   }
   .animationBox {
     display: block;
@@ -610,13 +610,13 @@ svg:not(:root) {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .home,
   .service,
   .developers,
   .companies,
   .hello {
-    font-size: calc(3px + 1vmin);
+    font-size: calc(2vmin - 1px);
   }
   .companyContainer,
   .developerContainer {
