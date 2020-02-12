@@ -1,6 +1,5 @@
 html {
   font-family: 'Noto Sans', sans-serif;
-  scroll-behavior: smooth;
 }
 
 * {
@@ -13,11 +12,16 @@ html {
   --navBar-background-color: rgba(61, 61, 255, 0.8);
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
 .appHeader {
+  display: flex;
   background-color: #000000;
   padding: 0vw 10vw 0vw 10vw;
-  height: 100vh;
-  display: flex;
+  height: 10vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -25,20 +29,33 @@ html {
   color: #FFFFFF;
 }
 
+.stack {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 90vh;
+}
+
 .animationHeader {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
-  height: 80vh;
+  height: 90vh;
+  position: absolute;
+  width: 100%;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 .animationBox {
+  margin-top: auto;
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   flex-direction: column;
-  justify-content: space-around;
-  width: 70vw;
+  justify-content: center;
+  width: 100vw;
 }
 
 .animation {
@@ -46,7 +63,7 @@ html {
   align-items: center;
   box-sizing: border-box;
   margin: 0 auto 0 auto;
-  height: 50vh;
+  height: 40vh;
   max-width: 30vw;
   /* grid-template-columns: auto; */
 }
@@ -57,7 +74,7 @@ html {
   justify-content: center;
   text-align: center;
   max-width: 60vw;
-  height: 30vh;
+  height: 25vh;
   margin: 0 auto 0 auto;
 }
 
@@ -76,7 +93,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(4vmin - 4px);
-  /* height: 20vh; */
+  height: 50vh;
   width: 40vw;
 }
 
@@ -85,8 +102,8 @@ html {
   max-width: 100%;
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
-  width: 192px;
-  height: 192px;
+  width: 224px;
+  height: 224px;
   fill: none;
 }
 
@@ -168,9 +185,10 @@ svg:not(:root) {
   text-align: center;
   justify-content: center;
   width: inherit;
+  cursor: pointer;
 }
 
-.homeLink:hover, 
+.homeLink:hover,
 .serviceLink:hover,
 .developerLink:hover,
 .companyLink:hover,
@@ -235,12 +253,16 @@ svg:not(:root) {
 }
 
 .serviceContainer {
-  display: flex;
+  display: none;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  height: 100vh;
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 90vh;
   padding: 0vw 10vw 0vw 10vw;
+  position: absolute;
+  z-index: 0;
 }
 
 .serviceContent {
@@ -354,15 +376,21 @@ svg:not(:root) {
 }
 
 .developerContainer {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #FFFFFF;
   background-color: #000000;
-  height: 100vh;
+  height: 90vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
+  position: absolute;
+  z-index: 0;
+}
+
+.developerContainer:target {
+  z-index: 1;
 }
 
 .developerContent, .companyContent {
@@ -411,13 +439,21 @@ svg:not(:root) {
 }
 
 .companyContainer {
-  display: flex;
+  display: none;
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  flex-direction: column;
-  height: 100vh;
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 90vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
+  position: absolute;
+  z-index: 0;
+}
+
+.companyContainer:target {
+  z-index: 1;
 }
 
 .companyDescription {
@@ -456,16 +492,22 @@ svg:not(:root) {
 }
 
 .helloContainer {
-  background-color: #000000;
+  display: none;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: #000000;
   color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: 90vh;
+  width: 80vw;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
+  position: absolute;
 }
+
+/* .companyContainer:target {
+  z-index: 1;
+} */
 
 .helloCTA {
   display: flex;
@@ -490,7 +532,7 @@ svg:not(:root) {
   padding: 2vh 2.5vw 2vh 2.5vw;
   border: 2px solid transparent;
   border-radius: 4px;
-  width: 50%;
+  /* width: 50%; */
   height: 10vh;
   color: var(--link-color);
   font-size: calc(10px + 4vmin);
@@ -499,6 +541,41 @@ svg:not(:root) {
 .helloEmailLink:hover {
   color: #FFFFFF;
   font-weight: bold;
+}
+
+/* .serviceLink:focus + .serviceContainer {
+    visibility: flex;
+} */
+
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.6;
+  }
+  66% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.8;
+  }
+  66% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes animation-twinner {
