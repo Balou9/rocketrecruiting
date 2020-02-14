@@ -1,7 +1,7 @@
-// get child class name of parent // recursive
+/// get child class name of parent // recursive
 // CTA to COI call of interest
-// this.state object containing records states of a session
-// add eventListener on forward and back browser action, this.state object
+// this.stat.snapshot object containing state records of per session
+// add eventListener on forward and back arrow browser action
 class StackDeck {
 
   constructor() {
@@ -53,13 +53,13 @@ class StackDeck {
         var childClassNames = []
         for (var i = 0; i < children.length; i++) {
           if (children[i].nodeName === "svg") {
-            childClassNames.push(children[i].className.baseVal)
+            childClassNames.push(children[i].classList.value)
           } else {
             childClassNames.push(children[i].className)
           }
         }
       }
-      // return childClassNames
+
       return childClassNames
     }
 
