@@ -29,15 +29,17 @@ class StackDeck {
 
     this.menuLinkNames = Object.keys(this.deck)
     this.len = this.menuLinkNames.length
+    this.snapshot = function () {
+        var snap = {
+          homeLink: this.deck.homeLink.style.display,
+          serviceLink: this.deck.serviceLink.style.display,
+          developerLink: this.deck.developerLink.style.display,
+          companyLink: this.deck.companyLink.style.display,
+          helloLink: this.deck.helloLink.style.display
+        }
+        return snap
 
-    // this.state = function () {
-    //   var result = []
-    //   for (var i = 0; i < this.len; i++) {
-    //     result.push(this.deck[this.menuLinkNames[i]].style.display)
-    //   }
-    //   return result
-    //
-    // }
+    }
 
     this.findActive = function () {
       for (var i = 0; i < this.len; i++) {
@@ -46,30 +48,19 @@ class StackDeck {
       }
     }
 
-    this._getChildClassName = function (parent) {
+    this.getChildClassName = function (parent) {
+      // https://repl.it/@roryewell/getElementsByClassName-with-Recursion
+      var childClassNames = []
       var children = document.getElementsByClassName(parent)[0].children
 
       if (children) {
-        var childClassNames = []
         for (var i = 0; i < children.length; i++) {
-          if (children[i].nodeName === "svg") {
-            childClassNames.push(children[i].classList.value)
-          } else {
-            childClassNames.push(children[i].className)
-          }
+          childClassNames.push(children[i].classList.value)
         }
-      }
 
+        // result.push(...childClassNames)
+      }
       return childClassNames
-    }
-
-    this.getChildClassName = function (parent) {
-      if (typeof parent === "string") {
-        return this._getChildClassName(parent)
-      }
-      else {
-        return this._getChildClassName(...parent)
-      }
     }
 
     this.handle = function (event) {
@@ -109,8 +100,8 @@ var stackdeck = new StackDeck()
 stackdeck.appHeader.addEventListener("click", function (e) {
   stackdeck.handle(e)
   var c = stackdeck.getChildClassName(e.target.className)
-  console.log(stackdeck.getChildClassName(c))
-  console.log(stackdeck.getChildClassName(e.target.className))
+  // console.log({parent: e.target.className, children: stackdeck.getChildClassName(e.target.className)})
+  // console.log(stackdeck.snapshot())
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
