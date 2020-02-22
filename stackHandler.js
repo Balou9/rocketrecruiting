@@ -1,7 +1,7 @@
-/// get child class name of parent // recursive
+// enable eventListener an all elements of a deck
 // CTA to COI call of interest
-// this.stat.snapshot object containing state records of per session
 // add eventListener on forward and back arrow browser action
+
 class StackDeck {
 
   constructor() {
@@ -30,66 +30,77 @@ class StackDeck {
     this.menuLinkNames = Object.keys(this.deck)
     this.len = this.menuLinkNames.length
     this.snapshot = function () {
-        var snap = {
+        return {
           homeLink: this.deck.homeLink.style.display,
           serviceLink: this.deck.serviceLink.style.display,
           developerLink: this.deck.developerLink.style.display,
           companyLink: this.deck.companyLink.style.display,
           helloLink: this.deck.helloLink.style.display
         }
-        return snap
-
     }
 
     this.findActive = function () {
       for (var i = 0; i < this.len; i++) {
+        // check for svg tag and grab baseVal
         if (this.deck[this.menuLinkNames[i]].style.display === "flex")
         return i
       }
     }
 
-    this.getChildClassName = function (parent) {
-      // https://repl.it/@roryewell/getElementsByClassName-with-Recursion
-      var childClassNames = []
-      var children = document.getElementsByClassName(parent)[0].children
-
-      if (children) {
-        for (var i = 0; i < children.length; i++) {
-          childClassNames.push(children[i].classList.value)
-        }
-
-        // result.push(...childClassNames)
+    this.getChildClassName = function (parentClassName) {
+      var childClassNames = [parentClassName]
+      var children = document.getElementsByClassName(parentClassName)[0].getElementsByTagName("*")
+      for (var i = 0; i < children.length; i++) {
+        childClassNames.push(children[i].classList.value)
       }
       return childClassNames
     }
+
 
     this.handle = function (event) {
       var index = this.findActive()
       var clicked = event.target.className
 
       this.deck[this.menuLinkNames[index]].style.display = "none"
+      console.log(clicked, event.target.className)
+      console.log(this.getChildClassName("homeLink"))
 
-      // if clicked is in array of menuLinkNames and their children
-      if (this.menuLinkNames.includes(clicked)) {
-        this.deck[clicked].style.display = "flex"
-      } else {
-        // if clicked is in array of serviceDeveloperCTA and their children
+        if (this.getChildClassName("homeLink").includes(clicked)) {
+          this.deck.homeLink.style.display = "flex"
+        }
+
+        if (this.getChildClassName("serviceLink").includes(clicked)) {
+          this.deck.serviceLink.style.display = "flex"
+        }
+
+        if (this.getChildClassName("developerLink").includes(clicked)) {
+          this.deck.developerLink.style.display = "flex"
+        }
+
+        if (this.getChildClassName("companyLink").includes(clicked)) {
+          this.deck.companyLink.style.display = "flex"
+        }
+
+        if (this.getChildClassName("helloLink").includes(clicked)) {
+          this.deck.helloLink.style.display = "flex"
+        }
+
         if (clicked === this.developerCallToAction.className) {
           this.deck.developerLink.style.display = "flex"
         }
-        // if clicked is in array of serviceCompanyCTA and their children
+
         if (clicked === this.companyCallToAction.className) {
           this.deck.companyLink.style.display = "flex"
         }
-        // if clicked is in array of developerHelloLinkCTA and their children
+
         if (clicked === this.developerSayHello.className) {
           this.deck.helloLink.style.display = "flex"
         }
-        // if clicked is in array of companyHelloLinkCTA and their children
+
         if (clicked === this.companySayHello.className) {
           this.deck.helloLink.style.display = "flex"
         }
-      }
+        
       return this
     }
   }
@@ -99,10 +110,8 @@ var stackdeck = new StackDeck()
 
 stackdeck.appHeader.addEventListener("click", function (e) {
   stackdeck.handle(e)
-  var c = stackdeck.getChildClassName(e.target.className)
-  // console.log({parent: e.target.className, children: stackdeck.getChildClassName(e.target.className)})
-  // console.log(stackdeck.snapshot())
 })
+
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
   stackdeck.handle(e)
