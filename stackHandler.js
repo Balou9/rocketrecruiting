@@ -1,5 +1,3 @@
-// enable eventListener an all elements of a deck
-// CTA to COI call of interest
 // add eventListener on forward and back arrow browser action
 
 class StackDeck {
@@ -14,7 +12,8 @@ class StackDeck {
       helloLink : document.getElementsByClassName("helloContainer")[0]
     }
 
-    this.appHeader = document.getElementsByClassName("appHeader")[0]
+    this.menu = Object.keys(this.deck)
+    this.navBar = document.getElementsByClassName("navBar")[0]
 
     this.developerCallToAction = document.getElementsByClassName("serviceDeveloperCTA")[0]
     this.companyCallToAction = document.getElementsByClassName("serviceCompanyCTA")[0]
@@ -27,9 +26,7 @@ class StackDeck {
     this.deck.companyLink.style.display = "none"
     this.deck.helloLink.style.display = "none"
 
-    this.menuLinkNames = Object.keys(this.deck)
-    this.len = this.menuLinkNames.length
-    this.snapshot = function () {
+    this.snapShot = function () {
         return {
           homeLink: this.deck.homeLink.style.display,
           serviceLink: this.deck.serviceLink.style.display,
@@ -40,9 +37,8 @@ class StackDeck {
     }
 
     this.findActive = function () {
-      for (var i = 0; i < this.len; i++) {
-        // check for svg tag and grab baseVal
-        if (this.deck[this.menuLinkNames[i]].style.display === "flex")
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.deck[this.menu[i]].style.display === "flex")
         return i
       }
     }
@@ -53,54 +49,50 @@ class StackDeck {
       for (var i = 0; i < children.length; i++) {
         childClassNames.push(children[i].classList.value)
       }
+
       return childClassNames
     }
 
+    this.handleNavigationMenu = function (event) {
 
-    this.handle = function (event) {
       var index = this.findActive()
-      var clicked = event.target.className
+      this.deck[this.menu[index]].style.display = "none"
+      var clicked = event.target.classList.value
 
-      this.deck[this.menuLinkNames[index]].style.display = "none"
-      console.log(clicked, event.target.className)
-      console.log(this.getChildClassName("homeLink"))
-
-        if (this.getChildClassName("homeLink").includes(clicked)) {
-          this.deck.homeLink.style.display = "flex"
+        if (clicked === "navBar") {
+          this.deck[this.menu[index]].style.display = "flex"
+        } else {
+          for (var i = 0; i < this.menu.length; i++) {
+            if (this.getChildClassName(this.menu[i]).includes(clicked)) {
+              this.deck[this.menu[i]].style.display = "flex"
+            }
+          }
         }
 
-        if (this.getChildClassName("serviceLink").includes(clicked)) {
-          this.deck.serviceLink.style.display = "flex"
-        }
+      return this
+    }
 
-        if (this.getChildClassName("developerLink").includes(clicked)) {
+    this.handleCTALinks = function (event) {
+      var index = this.findActive()
+      this.deck[this.menu[index]].style.display = "none"
+      var clicked = event.target.classList.value
+
+        if (this.getChildClassName(this.developerCallToAction.classList.value).includes(clicked)) {
           this.deck.developerLink.style.display = "flex"
         }
 
-        if (this.getChildClassName("companyLink").includes(clicked)) {
+        if (this.getChildClassName(this.companyCallToAction.classList.value).includes(clicked)) {
           this.deck.companyLink.style.display = "flex"
         }
 
-        if (this.getChildClassName("helloLink").includes(clicked)) {
+        if (this.getChildClassName(this.developerSayHello.classList.value).includes(clicked)) {
           this.deck.helloLink.style.display = "flex"
         }
 
-        if (clicked === this.developerCallToAction.className) {
-          this.deck.developerLink.style.display = "flex"
-        }
-
-        if (clicked === this.companyCallToAction.className) {
-          this.deck.companyLink.style.display = "flex"
-        }
-
-        if (clicked === this.developerSayHello.className) {
+        if (this.getChildClassName(this.companySayHello.classList.value).includes(clicked)) {
           this.deck.helloLink.style.display = "flex"
         }
 
-        if (clicked === this.companySayHello.className) {
-          this.deck.helloLink.style.display = "flex"
-        }
-        
       return this
     }
   }
@@ -108,23 +100,22 @@ class StackDeck {
 
 var stackdeck = new StackDeck()
 
-stackdeck.appHeader.addEventListener("click", function (e) {
-  stackdeck.handle(e)
+stackdeck.navBar.addEventListener("click", function (e) {
+  stackdeck.handleNavigationMenu(e)
 })
 
-
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.handle(e)
+  stackdeck.handleCTALinks(e)
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.handle(e)
+  stackdeck.handleCTALinks(e)
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.handle(e)
+  stackdeck.handleCTALinks(e)
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.handle(e)
+  stackdeck.handleCTALinks(e)
 })

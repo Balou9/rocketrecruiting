@@ -19,7 +19,6 @@ body {
 
 .appHeader {
   display: flex;
-  padding: 0vw 10vw 0vw 10vw;
   height: 10vh;
   flex-direction: column;
   align-items: center;
@@ -208,7 +207,7 @@ svg:not(:root) {
   flex-direction: row;
   align-items: stretch;
   margin: 0 auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -311,18 +310,18 @@ svg:not(:root) {
   background-color: var(--link-color);
 }
 
-.serviceDeveloperCTA .arrowCTA,
-.serviceCompanyCTA .arrowCTA,
-.developerHelloLinkCTA .arrowCTA,
-.companyHelloLinkCTA .arrowCTA {
+/* .serviceDeveloperCTA .arrowCTAdev,
+.serviceCompanyCTA .arrowCTAcomp,
+.developerHelloLinkCTA .arrowCTAdevHello,
+.companyHelloLinkCTA .arrowCTAcompHello {
   position: relative;
   transition: 0.5s;
 }
 
-.serviceDeveloperCTA .arrowCTA:after,
-.serviceCompanyCTA .arrowCTA:after,
-.developerHelloLinkCTA .arrowCTA:after,
-.companyHelloLinkCTA .arrowCTA:after {
+.serviceDeveloperCTA .arrowCTAdev:after,
+.serviceCompanyCTA .arrowCTAcomp:after,
+.developerHelloLinkCTA .arrowCTAdevHello:after,
+.companyHelloLinkCTA .arrowCTAcompHello:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -333,20 +332,20 @@ svg:not(:root) {
   font-size: calc(20px + 2vmin);
 }
 
-.serviceDeveloperCTA:hover .arrowCTA,
-.serviceCompanyCTA:hover .arrowCTA,
-.developerHelloLinkCTA:hover .arrowCTA,
-.companyHelloLinkCTA:hover .arrowCTA {
+.serviceDeveloperCTA:hover .arrowCTAdev,
+.serviceCompanyCTA:hover .arrowCTAcomp,
+.developerHelloLinkCTA:hover .arrowCTAdevHello,
+.companyHelloLinkCTA:hover .arrowCTAcompHello {
   padding-right: 15%;
 }
 
-.serviceDeveloperCTA:hover .arrowCTA:after,
-.serviceCompanyCTA:hover .arrowCTA:after,
-.developerHelloLinkCTA:hover .arrowCTA:after,
-.companyHelloLinkCTA:hover .arrowCTA:after {
+.serviceDeveloperCTA:hover .arrowCTAdev:after,
+.serviceCompanyCTA:hover .arrowCTAcomp:after,
+.developerHelloLinkCTA:hover .arrowCTAdevHello:after,
+.companyHelloLinkCTA:hover .arrowCTAcompHello:after {
   opacity: 1;
   right: 0;
-}
+} */
 
 .developerContainer {
   display: none;
