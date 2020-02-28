@@ -75,7 +75,7 @@ class StackDeck {
       return childClassNames
     }
 
-    this.handleNavigationMenu = function (event) {
+    this.handle = function (event) {
 
       var index = this.findActive()
       this.deck[this.menu[index]].style.display = "none"
@@ -90,14 +90,6 @@ class StackDeck {
             }
           }
         }
-
-      return this
-    }
-
-    this.handleCTALinks = function (event) {
-      var index = this.findActive()
-      this.deck[this.menu[index]].style.display = "none"
-      var clicked = event.target.classList.value
 
         if (this.getChildClassName(this.developerCallToAction.classList.value).includes(clicked)) {
           this.deck.developerLink.style.display = "flex"
@@ -123,21 +115,21 @@ class StackDeck {
 var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
-  stackdeck.handleNavigationMenu(e).snapState()
+  stackdeck.handle(e).snapState()
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e).snapState()
+  stackdeck.handle(e).snapState()
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e).snapState()
+  stackdeck.handle(e).snapState()
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e).snapState()
+  stackdeck.handle(e).snapState()
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e).snapState()
+  stackdeck.handle(e).snapState()
 })
