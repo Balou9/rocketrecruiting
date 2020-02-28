@@ -1,3 +1,8 @@
+// To do
+// add nugget to svg
+// resize svg with v...
+// equal deck style elements by position
+// font-size
 // add eventListener on forward and back arrow browser action
 
 class StackDeck {
@@ -36,6 +41,23 @@ class StackDeck {
         }
     }
 
+    this.isEqualtoLastState = function () {
+      return JSON.stringify(this.state[Object.keys(this.state).length - 1]) === JSON.stringify(this.snapShot())
+    }
+
+    this.snapState = function () {
+      if (this.isEqualtoLastState()) {
+        return this
+      } else {
+        this.state[Object.keys(this.state).length] = this.snapShot()
+        return this
+      }
+    }
+
+    this.state = {
+      "0": this.snapShot()
+    }
+
     this.findActive = function () {
       for (var i = 0; i < this.menu.length; i++) {
         if (this.deck[this.menu[i]].style.display === "flex")
@@ -44,7 +66,7 @@ class StackDeck {
     }
 
     this.getChildClassName = function (parentClassName) {
-      var childClassNames = [parentClassName]
+      var childClassNames = [ parentClassName ]
       var children = document.getElementsByClassName(parentClassName)[0].getElementsByTagName("*")
       for (var i = 0; i < children.length; i++) {
         childClassNames.push(children[i].classList.value)
@@ -101,21 +123,21 @@ class StackDeck {
 var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
-  stackdeck.handleNavigationMenu(e)
+  stackdeck.handleNavigationMenu(e).snapState()
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e)
+  stackdeck.handleCTALinks(e).snapState()
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e)
+  stackdeck.handleCTALinks(e).snapState()
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e)
+  stackdeck.handleCTALinks(e).snapState()
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.handleCTALinks(e)
+  stackdeck.handleCTALinks(e).snapState()
 })
