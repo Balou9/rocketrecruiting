@@ -75,37 +75,54 @@ class StackDeck {
       return childClassNames
     }
 
-    this.handle = function (event) {
-
+    this.deleteActiveDeck = function (event) {
+      if (event.target.classList.value === "navBar") {
+        return this
+      }
       var index = this.findActive()
       this.deck[this.menu[index]].style.display = "none"
-      var clicked = event.target.classList.value
+      return this
+    }
 
-        if (clicked === "navBar") {
-          this.deck[this.menu[index]].style.display = "flex"
-        } else {
-          for (var i = 0; i < this.menu.length; i++) {
-            if (this.getChildClassName(this.menu[i]).includes(clicked)) {
-              this.deck[this.menu[i]].style.display = "flex"
-            }
-          }
-        }
+    this.handleNavbar = function (event) {
 
-        if (this.getChildClassName(this.developerCallToAction.classList.value).includes(clicked)) {
-          this.deck.developerLink.style.display = "flex"
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.getChildClassName(this.menu[i]).includes(event.target.classList.value)) {
+          this.deck[this.menu[i]].style.display = "flex"
         }
+      }
 
-        if (this.getChildClassName(this.companyCallToAction.classList.value).includes(clicked)) {
-          this.deck.companyLink.style.display = "flex"
-        }
+      return this
+    }
 
-        if (this.getChildClassName(this.developerSayHello.classList.value).includes(clicked)) {
-          this.deck.helloLink.style.display = "flex"
-        }
+    this.handleDeveloperCTA = function (event) {
+      if (this.getChildClassName(this.developerCallToAction.classList.value).includes(event.target.classList.value)) {
+        this.deck.developerLink.style.display = "flex"
+      }
 
-        if (this.getChildClassName(this.companySayHello.classList.value).includes(clicked)) {
-          this.deck.helloLink.style.display = "flex"
-        }
+      return this
+    }
+
+    this.handleCompanyCTA = function (event) {
+      if (this.getChildClassName(this.companyCallToAction.classList.value).includes(event.target.classList.value)) {
+        this.deck.companyLink.style.display = "flex"
+      }
+
+      return this
+    }
+
+    this.handleDeveloperHello = function (event) {
+      if (this.getChildClassName(this.developerSayHello.classList.value).includes(event.target.classList.value)) {
+        this.deck.helloLink.style.display = "flex"
+      }
+
+      return this
+    }
+
+    this.handleCompanyHello = function (event) {
+      if (this.getChildClassName(this.companySayHello.classList.value).includes(event.target.classList.value)) {
+        this.deck.helloLink.style.display = "flex"
+      }
 
       return this
     }
@@ -115,21 +132,21 @@ class StackDeck {
 var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
-  stackdeck.handle(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleNavbar(e).snapState()
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.handle(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleDeveloperCTA(e).snapState()
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.handle(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleCompanyCTA(e).snapState()
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.handle(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleDeveloperHello(e).snapState()
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.handle(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleCompanyHello(e).snapState()
 })
