@@ -133,6 +133,7 @@ var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
   stackdeck.deleteActiveDeck(e).handleNavbar(e).snapState()
+  console.log(e)
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
