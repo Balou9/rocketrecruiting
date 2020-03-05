@@ -94,7 +94,7 @@ body {
 }
 
 .logo {
-  display: block;
+  display: flex;
   max-width: 100%;
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
@@ -115,6 +115,18 @@ body {
 
 svg:not(:root) {
   overflow: hidden;
+}
+
+.nugget {
+  cx: 32;
+  cy: 32;
+  r: 32;
+  fill: transparent;
+  stroke: none;
+  tranzsform-origin: 0px 0px;
+  text-align: center;
+  width: inherit;
+  height: 10vh;
 }
 
 .circleFrame1 {

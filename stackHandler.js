@@ -1,9 +1,9 @@
-// To do
+// TO DO...
+// add eventListener on forward and back arrow browser action
 // add nugget to svg
 // resize svg with v...
 // equal deck style elements by position
 // font-size
-// add eventListener on forward and back arrow browser action
 
 class StackDeck {
 
@@ -32,13 +32,10 @@ class StackDeck {
     this.deck.helloLink.style.display = "none"
 
     this.snapShot = function () {
-        return {
-          homeLink: this.deck.homeLink.style.display,
-          serviceLink: this.deck.serviceLink.style.display,
-          developerLink: this.deck.developerLink.style.display,
-          companyLink: this.deck.companyLink.style.display,
-          helloLink: this.deck.helloLink.style.display
-        }
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.deck[this.menu[i]].style.display === "flex")
+        return Object.keys(this.deck)[i]
+      }
     }
 
     this.isEqualtoLastState = function () {
@@ -46,23 +43,14 @@ class StackDeck {
     }
 
     this.snapState = function () {
-      if (this.isEqualtoLastState()) {
-        return this
-      } else {
+      if (!this.isEqualtoLastState()) {
         this.state[Object.keys(this.state).length] = this.snapShot()
-        return this
       }
+      return this
     }
 
     this.state = {
       "0": this.snapShot()
-    }
-
-    this.findActive = function () {
-      for (var i = 0; i < this.menu.length; i++) {
-        if (this.deck[this.menu[i]].style.display === "flex")
-        return i
-      }
     }
 
     this.getChildClassName = function (parentClassName) {
@@ -76,22 +64,20 @@ class StackDeck {
     }
 
     this.deleteActiveDeck = function (event) {
-      if (event.target.classList.value === "navBar") {
-        return this
+      if (event.target.classList.value !== "navBar") {
+        var index = this.state[Object.keys(this.state).length - 1]
+        this.deck[index].style.display = "none"
       }
-      var index = this.findActive()
-      this.deck[this.menu[index]].style.display = "none"
       return this
     }
 
     this.handleNavbar = function (event) {
-
       for (var i = 0; i < this.menu.length; i++) {
         if (this.getChildClassName(this.menu[i]).includes(event.target.classList.value)) {
           this.deck[this.menu[i]].style.display = "flex"
         }
       }
-
+      
       return this
     }
 
@@ -133,7 +119,6 @@ var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
   stackdeck.deleteActiveDeck(e).handleNavbar(e).snapState()
-  console.log(e)
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
