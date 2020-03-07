@@ -2,7 +2,6 @@
 // add eventListener on forward and back arrow browser action
 // add nugget to svg
 // resize svg with v...
-// equal deck style elements by position
 // font-size
 
 class StackDeck {
@@ -77,7 +76,7 @@ class StackDeck {
           this.deck[this.menu[i]].style.display = "flex"
         }
       }
-      
+
       return this
     }
 
