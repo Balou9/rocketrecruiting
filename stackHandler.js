@@ -46,28 +46,6 @@ class StackDeck {
     this.active.company.style.color = '#ffffff'
     this.active.hello.style.color = '#ffffff'
 
-    this.snapShot = function () {
-      for (var i = 0; i < this.menu.length; i++) {
-        if (this.deck[this.menu[i]].style.display === "flex")
-        return this.menu[i]
-      }
-    }
-
-    this.isEqualtoLastState = function () {
-      return JSON.stringify(this.state[Object.keys(this.state).length - 1]) === JSON.stringify(this.snapShot())
-    }
-
-    this.snapState = function () {
-      if (!this.isEqualtoLastState()) {
-        this.state[Object.keys(this.state).length] = this.snapShot()
-      }
-      return this
-    }
-
-    this.state = {
-      "0": this.snapShot()
-    }
-
     this.getChildClassName = function (parentClassName) {
       var childClassNames = [ parentClassName ]
       var children = document.getElementsByClassName(parentClassName)[0].getElementsByTagName("*")
@@ -111,7 +89,7 @@ class StackDeck {
       if (this.getChildClassName(this.developerCallToAction.classList.value).includes(event.target.classList.value)) {
         this.deck.developerLink.style.display = "flex"
       }
-      
+
       return this
     }
 
@@ -144,21 +122,21 @@ class StackDeck {
 var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
-  stackdeck.deleteActiveDeck(e).handleNavbar(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleNavbar(e)
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.deleteActiveDeck(e).handleDeveloperCTA(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleDeveloperCTA(e)
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.deleteActiveDeck(e).handleCompanyCTA(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleCompanyCTA(e)
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.deleteActiveDeck(e).handleDeveloperHello(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleDeveloperHello(e)
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.deleteActiveDeck(e).handleCompanyHello(e).snapState()
+  stackdeck.deleteActiveDeck(e).handleCompanyHello(e)
 })
