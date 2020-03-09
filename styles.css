@@ -9,7 +9,8 @@ html {
 
 :root {
   --link-color: rgba(61, 61, 255, 1);
-  --navBar-background-color: rgba(61, 61, 255, 0.8);
+  --navBar-background-color: rgba(61, 61, 255, 0.5);
+  /* --link-color: #3D3DFF; */
 }
 
 body {
@@ -19,19 +20,28 @@ body {
 
 .appHeader {
   display: flex;
-  height: 10vh;
+  height: 20vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #FFFFFF;
+  background-color: #000000;
+}
+
+.serviceEmoji,
+.developerEmoji,
+.companyEmoji,
+.helloEmoji {
+  height: 5vh;
+  width: 5vw;
 }
 
 .stack {
   display: flex;
   flex-direction: row;
   position: relative;
-  height: 90vh;
+  height: 80vh;
   color: #FFFFFF;
   background-color: #000000;
 }
@@ -41,7 +51,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  height: 90vh;
+  height: 80vh;
   position: absolute;
   width: 100%;
 }
@@ -106,7 +116,6 @@ body {
 .miniLogo {
   display: block;
   max-width: 100%;
-  margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
   width: 5vw;
   height: 5vh;
@@ -185,8 +194,8 @@ svg:not(:root) {
 .companyLink,
 .helloLink {
   display: flex;
-  flex-direction: column;
-  background-color: var(--link-color);
+  flex-direction: row;
+  /* background-color: var(--link-color); */
   align-items: center;
   text-decoration: none;
   flex-basis: 90%;
@@ -206,11 +215,11 @@ svg:not(:root) {
 
 .home,
 .service,
-.developers,
-.companies,
+.developer,
+.company,
 .hello {
-  font-size: calc(8px + 1vmin);
-  color: #FFFFFF;
+  font-size: calc(12px + 1vmin);
+  /* color: #FFFFFF; */
   font-weight: bold;
 }
 
@@ -223,7 +232,7 @@ svg:not(:root) {
   top: 0;
   left: 0;
   width: 100%;
-  height: 10vh;
+  height: 20vh;
   opacity: 1;
 }
 
@@ -243,7 +252,7 @@ svg:not(:root) {
   flex-direction: column;
   /* background-color: #000000;
   color: #FFFFFF; */
-  height: 90vh;
+  height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
   position: absolute;
 }
@@ -363,7 +372,7 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 90vh;
+  height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
   position: absolute;
@@ -419,7 +428,7 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 90vh;
+  height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
   font-size: calc(10px + 2vmin);
   position: absolute;
@@ -465,7 +474,7 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 90vh;
+  height: 80vh;
   width: 100vw;
   font-size: calc(10px + 2vmin);
   position: absolute;
@@ -602,8 +611,8 @@ svg:not(:root) {
 @media screen and (max-width: 992px) {
   .home,
   .service,
-  .developers,
-  .companies,
+  .developer,
+  .company,
   .hello {
     font-size: calc(2vmin);
   }
@@ -658,8 +667,8 @@ svg:not(:root) {
 @media screen and (max-width: 768px) {
   .home,
   .service,
-  .developers,
-  .companies,
+  .developer,
+  .company,
   .hello {
     font-size: calc(2vmin - 1px);
   }

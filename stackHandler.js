@@ -1,5 +1,4 @@
 // TO DO...
-// add eventListener on forward and back arrow browser action
 // add nugget to svg
 // resize svg with v...
 // font-size
@@ -16,7 +15,18 @@ class StackDeck {
       helloLink : document.getElementsByClassName("helloContainer")[0]
     }
 
+    this.active = {
+      home: document.getElementsByClassName("home")[0],
+      service: document.getElementsByClassName("service")[0],
+      developer: document.getElementsByClassName("developer")[0],
+      company: document.getElementsByClassName("company")[0],
+      hello: document.getElementsByClassName("hello")[0]
+    }
+
+    this.blue = "#3d3dff"
+
     this.menu = Object.keys(this.deck)
+    this.links = Object.keys(this.active)
     this.navBar = document.getElementsByClassName("navBar")[0]
 
     this.developerCallToAction = document.getElementsByClassName("serviceDeveloperCTA")[0]
@@ -30,10 +40,16 @@ class StackDeck {
     this.deck.companyLink.style.display = "none"
     this.deck.helloLink.style.display = "none"
 
+    this.active.home.style.color = this.blue
+    this.active.service.style.color = '#ffffff'
+    this.active.developer.style.color = '#ffffff'
+    this.active.company.style.color = '#ffffff'
+    this.active.hello.style.color = '#ffffff'
+
     this.snapShot = function () {
       for (var i = 0; i < this.menu.length; i++) {
         if (this.deck[this.menu[i]].style.display === "flex")
-        return Object.keys(this.deck)[i]
+        return this.menu[i]
       }
     }
 
@@ -62,10 +78,20 @@ class StackDeck {
       return childClassNames
     }
 
+    this.whoIsFlex = function () {
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.deck[this.menu[i]].style.display === "flex") {
+          return this.menu[i]
+        }
+      }
+    }
+
     this.deleteActiveDeck = function (event) {
       if (event.target.classList.value !== "navBar") {
-        var index = this.state[Object.keys(this.state).length - 1]
-        this.deck[index].style.display = "none"
+        var activeDeck = this.whoIsFlex()
+        var activeLink = this.menu.indexOf(activeDeck)
+        this.deck[activeDeck].style.display = "none"
+        this.active[this.links[activeLink]].style.color = '#ffffff'
       }
       return this
     }
@@ -74,6 +100,7 @@ class StackDeck {
       for (var i = 0; i < this.menu.length; i++) {
         if (this.getChildClassName(this.menu[i]).includes(event.target.classList.value)) {
           this.deck[this.menu[i]].style.display = "flex"
+          this.active[this.links[i]].style.color = this.blue
         }
       }
 
@@ -84,7 +111,7 @@ class StackDeck {
       if (this.getChildClassName(this.developerCallToAction.classList.value).includes(event.target.classList.value)) {
         this.deck.developerLink.style.display = "flex"
       }
-
+      
       return this
     }
 
