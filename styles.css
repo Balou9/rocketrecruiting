@@ -219,7 +219,6 @@ svg:not(:root) {
 .company,
 .hello {
   font-size: calc(12px + 1vmin);
-  /* color: #FFFFFF; */
   font-weight: bold;
 }
 
@@ -320,6 +319,7 @@ svg:not(:root) {
   font-size: calc(2px + 3vmin);
   font-weight: bold;
   margin: auto;
+  cursor: pointer;
 }
 
 .serviceDeveloperCTA:hover,
