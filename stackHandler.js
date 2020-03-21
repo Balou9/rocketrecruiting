@@ -1,9 +1,3 @@
-// TO DO...
-// get rid of "we"
-// add animated arrows
-// resize svg with v...
-// font-size
-
 class StackDeck {
 
   constructor() {

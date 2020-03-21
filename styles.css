@@ -270,25 +270,34 @@ svg:not(:root) {
   flex-direction: row;
   align-items: center;
   width: inherit;
-  height: 30vh;
+  height: 20vh;
   width: 60vw;
 }
 
 .serviceOutlineText {
   text-align: center;
-  font-size: calc(2px + 3vmin);
+  font-size: calc(3vmin);
   font-weight: bold;
 }
 
 .jobProfileContainer {
   display: flex;
-  height: 20vh;
+  align-items: center;
+  height: 30vh;
 }
 
-.jobProfile{
-  min-width: 30vw;
+.jobProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 60vw;
   list-style-type: none;
-  font-size: calc(2px + 3vmin);
+  font-size: calc(3vmin - 4px);
+}
+
+.profile {
+  width: 30vw;
+  font-weight: bold;
 }
 
 .serviceCTA {
@@ -410,7 +419,7 @@ svg:not(:root) {
 }
 
 .developerOutlineText {
-  font-size: calc(5px + 2vmin);
+  font-size: calc(3vmin - 4px);
 }
 
 .developerHelloLink, .companyHelloLink {
@@ -458,7 +467,7 @@ svg:not(:root) {
 }
 
 .companyOutlineText {
-  font-size: calc(2px + 3vmin)
+  font-size: calc(3vmin - 4px),
 }
 
 .githubLink {
@@ -679,6 +688,7 @@ svg:not(:root) {
   .companyOutlineText,
   .jobProfile {
     font-size: calc(6px + 2vmin);
+    flex-direction: column;
   }
   .serviceDeveloperCTA,
   .serviceCompanyCTA,
