@@ -8,8 +8,8 @@ html {
 }
 
 :root {
-  --link-color: rgba(61, 61, 255, 1);
-  --navBar-background-color: rgba(61, 61, 255, 0.5);
+  --link-color: rgba(95, 147, 237, 1);
+  --navBar-background-color: rgba(95, 147, 237, 0.5);
   /* --link-color: #3D3DFF; */
 }
 
@@ -25,7 +25,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #FFFFFF;
   background-color: #000000;
 }
 
@@ -44,7 +43,7 @@ body {
   position: relative;
   height: 80vh;
   color: #FFFFFF;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.99);
 }
 
 .animationHeader {
@@ -61,7 +60,7 @@ body {
   margin-top: auto;
   display: flex;
   align-items: flex-start;
-  height: 90vh;
+  height: 80vh;
   flex-direction: column;
   justify-content: center;
   width: 100vw;
@@ -72,17 +71,16 @@ body {
   align-items: center;
   box-sizing: border-box;
   margin: 0 auto 0 auto;
-  height: 30vh;
-  /* grid-template-columns: auto; */
+  height: 25vh;
 }
 
 .rocketHeader {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   max-width: 60vw;
-  height: 30vh;
+  height: 40vh;
   margin: 0 auto 0 auto;
 }
 
@@ -91,7 +89,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 7vmin;
+  font-size: calc(6vmin - 6px);
   height: 20vh;
 }
 
@@ -101,7 +99,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(4vmin - 4px);
-  height: 50vh;
 }
 
 .logo {
@@ -109,8 +106,8 @@ body {
   max-width: 100%;
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
-  width: 25vw;
-  height: 25vh;
+  width: 23vw;
+  height: 23vh;
   fill: none;
 }
 
@@ -196,7 +193,6 @@ svg:not(:root) {
 .helloLink {
   display: flex;
   flex-direction: row;
-  /* background-color: var(--link-color); */
   align-items: center;
   text-decoration: none;
   flex-basis: 90%;
@@ -250,8 +246,6 @@ svg:not(:root) {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  /* background-color: #000000;
-  color: #FFFFFF; */
   height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
   position: absolute;
@@ -340,7 +334,7 @@ svg:not(:root) {
   background-color: var(--link-color);
 }
 
-/* .serviceDeveloperCTA .arrowCTAdev,
+.serviceDeveloperCTA .arrowCTAdev,
 .serviceCompanyCTA .arrowCTAcomp,
 .developerHelloLinkCTA .arrowCTAdevHello,
 .companyHelloLinkCTA .arrowCTAcompHello {
@@ -366,7 +360,7 @@ svg:not(:root) {
 .serviceCompanyCTA:hover .arrowCTAcomp,
 .developerHelloLinkCTA:hover .arrowCTAdevHello,
 .companyHelloLinkCTA:hover .arrowCTAcompHello {
-  padding-right: 15%;
+  padding-right: 10%;
 }
 
 .serviceDeveloperCTA:hover .arrowCTAdev:after,
@@ -375,7 +369,7 @@ svg:not(:root) {
 .companyHelloLinkCTA:hover .arrowCTAcompHello:after {
   opacity: 1;
   right: 0;
-} */
+}
 
 .developerContainer {
   display: none;

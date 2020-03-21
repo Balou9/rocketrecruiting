@@ -26,7 +26,7 @@ class StackDeck {
       hello: document.getElementsByClassName("helloEmoji")[0]
     }
 
-    this.blue = "#3d3dff"
+    this.blue = "#5fb3ed"
 
     this.menu = Object.keys(this.deck)
     this.links = Object.keys(this.active)
@@ -34,8 +34,8 @@ class StackDeck {
 
     this.developerCallToAction = document.getElementsByClassName("serviceDeveloperCTA")[0]
     this.companyCallToAction = document.getElementsByClassName("serviceCompanyCTA")[0]
-    this.developerSayHello = document.getElementsByClassName("developerHelloLinkCTA")[0]
-    this.companySayHello = document.getElementsByClassName("companyHelloLinkCTA")[0]
+    this.developerSayHello = document.getElementsByClassName("developerHelloLink")[0]
+    this.companySayHello = document.getElementsByClassName("companyHelloLink")[0]
 
     this.deck.homeLink.style.display = "flex"
     this.deck.serviceLink.style.display = "none"
@@ -122,7 +122,7 @@ class StackDeck {
     this.handleDeveloperHello = function (event) {
       if (this.getChildClassName(this.developerSayHello.classList.value).includes(event.target.classList.value)) {
         this.deck.helloLink.style.display = "flex"
-        this.active.hello.style.display = this.blue
+        this.active.hello.style.color = this.blue
       }
 
       return this
@@ -131,7 +131,7 @@ class StackDeck {
     this.handleCompanyHello = function (event) {
       if (this.getChildClassName(this.companySayHello.classList.value).includes(event.target.classList.value)) {
         this.deck.helloLink.style.display = "flex"
-        this.active.hello.style.display = this.blue
+        this.active.hello.style.color = this.blue
       }
 
       return this
