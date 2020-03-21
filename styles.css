@@ -35,6 +35,7 @@ body {
 .helloEmoji {
   height: 5vh;
   width: 5vw;
+  display: inline-block;
 }
 
 .stack {
@@ -59,7 +60,7 @@ body {
 .animationBox {
   margin-top: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   height: 90vh;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +72,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   margin: 0 auto 0 auto;
-  height: 40vh;
+  height: 30vh;
   /* grid-template-columns: auto; */
 }
 
@@ -81,7 +82,7 @@ body {
   justify-content: center;
   text-align: center;
   max-width: 60vw;
-  height: 25vh;
+  height: 30vh;
   margin: 0 auto 0 auto;
 }
 
@@ -108,8 +109,8 @@ body {
   max-width: 100%;
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
-  width: 224px;
-  height: 224px;
+  width: 25vw;
+  height: 25vh;
   fill: none;
 }
 
@@ -117,8 +118,8 @@ body {
   display: block;
   max-width: 100%;
   transform: rotate3d(1,1,1,0deg);
-  width: 5vw;
-  height: 5vh;
+  width: 4vw;
+  height: 4vh;
   fill: none;
 }
 
@@ -260,7 +261,7 @@ svg:not(:root) {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 40vh;
+  height: 50vh;
   width: calc(100vw - .serviceContainer.padding);
 }
 
@@ -314,7 +315,7 @@ svg:not(:root) {
   color: var(--link-color);
   background-color: transparent;
   text-decoration: none;
-  width: 90%;
+  width: 100vw;
   height: 10vh;
   font-size: calc(2px + 3vmin);
   font-weight: bold;
@@ -383,7 +384,7 @@ svg:not(:root) {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: 40vh;
+  height: 50vh;
   width: calc(100vw - .developerContainer.padding);
 }
 
@@ -514,6 +515,21 @@ svg:not(:root) {
   font-weight: bold;
 }
 
+@keyframes shake {
+  0%{
+    transform: translate(0);
+  }
+  20%,40%,60%,80%{
+    transform: translate(0.3vw);
+  }
+  10%,30%,50%{
+    transform: translate(-0.2vh);
+  }
+
+  70%,100%{
+    transform: translate(0);
+  }
+}
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -533,11 +549,29 @@ svg:not(:root) {
   0% {
     opacity: 1;
   }
+  11% {
+    opacity: 0.88;
+  }
+  22% {
+    opacity: 0.77;
+  }
   33% {
-    opacity: 0.8;
+    opacity: 0.66;
+  }
+  44% {
+    opacity: 0.55;
+  }
+  55% {
+    opacity: 0.44;
   }
   66% {
-    opacity: 0.6;
+    opacity: 0.33;
+  }
+  77% {
+    opacity: 0.22;
+  }
+  88% {
+    opacity: 0.11;
   }
   100% {
     opacity: 0;
