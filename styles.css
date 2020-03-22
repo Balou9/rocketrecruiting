@@ -24,7 +24,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   background-color: #000000;
 }
 
@@ -124,17 +123,14 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-.nugget {
-  cx: 32;
-  cy: 32;
-  r: 32;
-  fill: transparent;
-  stroke: none;
-  tranzsform-origin: 0px 0px;
-  text-align: center;
-  width: inherit;
-  height: 10vh;
-}
+/* .nugget {
+  align-items: stretch;
+  left: 0;
+  bottom: 0;
+  height: 1vh;
+  background-color: #CFB53B;
+  width: 1%;
+} */
 
 .circleFrame1 {
   cx: 32;
@@ -265,11 +261,10 @@ svg:not(:root) {
   align-items: center;
   width: inherit;
   height: 20vh;
-  width: 60vw;
 }
 
 .serviceOutlineText {
-  text-align: center;
+  align-items: center;
   font-size: calc(3vmin);
   font-weight: bold;
 }
@@ -644,6 +639,13 @@ svg:not(:root) {
   }
 }
 
+.appHeader {
+  font-size: calc(10px + 2vmin);
+}
+
+.headerTitle {
+  font-size: calc(6vmin - 6px);
+}
 
 @media screen and (max-width: 992px) {
   .home,

@@ -81,6 +81,7 @@ class StackDeck {
     }
 
     this.deleteActiveDeck = function (event) {
+      this.shakeReset()
       if (event.target.classList.value !== "navBar") {
         var activeDeck = this.whoIsFlex()
         var activeLink = this.menu.indexOf(activeDeck)
@@ -97,7 +98,7 @@ class StackDeck {
           this.active[this.links[i]].style.color = this.blue
         }
       }
-
+      this.shake()
       return this
     }
 
@@ -106,7 +107,7 @@ class StackDeck {
         this.deck.developerLink.style.display = "flex"
         this.active.developer.style.color = this.blue
       }
-
+      this.shake()
       return this
     }
 
@@ -115,7 +116,7 @@ class StackDeck {
         this.deck.companyLink.style.display = "flex"
         this.active.company.style.color = this.blue
       }
-
+      this.shake()
       return this
     }
 
@@ -124,7 +125,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-
+      this.shake()
       return this
     }
 
@@ -133,7 +134,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-
+      this.shake()
       return this
     }
   }
@@ -142,23 +143,23 @@ class StackDeck {
 var stackdeck = new StackDeck()
 
 stackdeck.navBar.addEventListener("click", function (e) {
-  stackdeck.shakeReset().deleteActiveDeck(e).handleNavbar(e).shake()
+  stackdeck.deleteActiveDeck(e).handleNavbar(e)
 })
 
 stackdeck.developerCallToAction.addEventListener("click", function (e) {
-  stackdeck.shakeReset().deleteActiveDeck(e).handleDeveloperCTA(e).shake()
+  stackdeck.deleteActiveDeck(e).handleDeveloperCTA(e)
 })
 
 stackdeck.companyCallToAction.addEventListener("click", function (e) {
-  stackdeck.shakeReset().deleteActiveDeck(e).handleCompanyCTA(e).shake()
+  stackdeck.deleteActiveDeck(e).handleCompanyCTA(e)
 })
 
 stackdeck.developerSayHello.addEventListener("click", function (e) {
-  stackdeck.shakeReset().deleteActiveDeck(e).handleDeveloperHello(e).shake()
+  stackdeck.deleteActiveDeck(e).handleDeveloperHello(e)
 })
 
 stackdeck.companySayHello.addEventListener("click", function (e) {
-  stackdeck.shakeReset().deleteActiveDeck(e).handleCompanyHello(e).shake()
+  stackdeck.deleteActiveDeck(e).handleCompanyHello(e)
 })
 
 window.onload = stackdeck.shake()
