@@ -41,7 +41,7 @@ body {
 
 .stack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr))
+  /* grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) */
   position: relative;
   height: 80vh;
   color: #FFFFFF;
@@ -268,13 +268,13 @@ svg:not(:root) {
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-width: 60vw;
+  width: 60vw;
   list-style-type: none;
 }
 
 .profile {
   width: 30vw;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .serviceCTA {
@@ -460,12 +460,6 @@ svg:not(:root) {
   height: 50vh;
 }
 
-@media screen and (max-width: 750px) {
-  .helloLinkContainer {
-    font-size: calc(16px + 2vmin);
-  }
-}
-
 .helloEmailLink {
   padding: 2vh 2.5vw 2vh 2.5vw;
   border: 2px solid transparent;
@@ -473,7 +467,6 @@ svg:not(:root) {
   /* width: 50%; */
   height: 10vh;
   color: var(--link-color);
-  font-size: calc(10px + 4vmin);
 }
 
 .helloEmailLink:hover {
@@ -608,7 +601,7 @@ svg:not(:root) {
 }
 
 .headerTitle {
-  font-size: calc(6vmin - 6px);
+  font-size: calc(7vmin);
 }
 
 .headerDescription {
@@ -627,47 +620,40 @@ svg:not(:root) {
 .developerHeader,
 .companyHeader,
 .helloHeader {
-  font-size: calc(2px + 5vmin);
+  font-size: calc(5vmin + 2px);
 }
 
-.serviceOutlineText {
-  font-size: calc(3vmin);
-}
-
-.jobProfile {
-  font-size: calc(3vmin - 2px);
-}
 .serviceDeveloperCTA,
 .serviceCompanyCTA,
 .developerHelloLinkCTA,
 .companyHelloLinkCTA {
-  font-size: calc(2px + 3vmin);
+  font-size: calc(3vmin + 2px);
 }
 
 .serviceDeveloperCTA .arrowCTAdev:after,
 .serviceCompanyCTA .arrowCTAcomp:after,
 .developerHelloLinkCTA .arrowCTAdevHello:after,
 .companyHelloLinkCTA .arrowCTAcompHello:after {
-  font-size: calc(20px + 2vmin);
+  font-size: calc(2vmin + 20px);
 }
 
 .developerDescription,
-.companyDescription {
-  font-size: calc(6px + 3vmin);
+.companyDescription,
+.serviceOutlineText {
+  font-size: calc(3vmin + 6px);
 }
 
-.developerOutlineText {
-  font-size: calc(3vmin - 4px);
+.developerHelloLink,
+.companyHelloLink {
+  font-size: calc(2vmin + 14px);
 }
 
-.developerHelloLink, .companyHelloLink {
-  font-size: calc(14px + 2vmin);
-}
-
+.jobProfile,
+.developerOutlineText,
 .companyOutlineText {
-  font-size: calc(3vmin - 4px);
+  font-size: calc(3vmin - 2px);
 }
 
-.helloContainer {
-  font-size: calc(10px + 2vmin);
+.helloEmailLink {
+  font-size: calc(4vmin + 10px);
 }

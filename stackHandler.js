@@ -49,7 +49,10 @@ class StackDeck {
     this.active.company.style.color = '#ffffff'
     this.active.hello.style.color = '#ffffff'
 
-    this.shake = function () {
+    this.shake = function (logo) {
+      if (logo) {
+        document.getElementsByClassName(logo)[0].style.animation = "shake .8s ease-in"
+      }
       var toBeShaken = this.menu.indexOf(this.whoIsFlex())
       this.emoj[Object.keys(this.emoj)[toBeShaken]].style.animation = "shake .8s ease-in"
       return this
@@ -162,4 +165,8 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
   stackdeck.deleteActiveDeck(e).handleCompanyHello(e)
 })
 
-window.onload = stackdeck.shake()
+window.onload = function () {
+  stackdeck.shake("logo")
+}
+
+stackdeck.shake()
