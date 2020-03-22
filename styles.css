@@ -31,14 +31,17 @@ body {
 .developerEmoji,
 .companyEmoji,
 .helloEmoji {
-  height: 5vh;
-  width: 5vw;
-  display: inline-block;
+  height: 4vh;
+  width: 4vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .stack {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr))
   position: relative;
   height: 80vh;
   color: #FFFFFF;
@@ -88,7 +91,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(6vmin - 6px);
   height: 20vh;
 }
 
@@ -97,7 +99,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(4vmin - 4px);
 }
 
 .logo {
@@ -114,23 +115,14 @@ body {
   display: block;
   max-width: 100%;
   transform: rotate3d(1,1,1,0deg);
-  width: 4vw;
-  height: 4vh;
+  width: 3vw;
+  height: 3vh;
   fill: none;
 }
 
 svg:not(:root) {
   overflow: hidden;
 }
-
-/* .nugget {
-  align-items: stretch;
-  left: 0;
-  bottom: 0;
-  height: 1vh;
-  background-color: #CFB53B;
-  width: 1%;
-} */
 
 .circleFrame1 {
   cx: 32;
@@ -211,7 +203,6 @@ svg:not(:root) {
 .developer,
 .company,
 .hello {
-  font-size: calc(12px + 1vmin);
   font-weight: bold;
 }
 
@@ -234,7 +225,6 @@ svg:not(:root) {
   flex-direction: column;
   justify-content: flex-end;
   height: 20vh;
-  font-size: calc(2px + 5vmin);
 }
 
 .serviceContainer {
@@ -265,7 +255,6 @@ svg:not(:root) {
 
 .serviceOutlineText {
   align-items: center;
-  font-size: calc(3vmin);
   font-weight: bold;
 }
 
@@ -281,7 +270,6 @@ svg:not(:root) {
   align-items: center;
   min-width: 60vw;
   list-style-type: none;
-  font-size: calc(3vmin - 4px);
 }
 
 .profile {
@@ -348,7 +336,6 @@ svg:not(:root) {
   right: -20%;
   transform: translate(0,-50%);
   transition: 0.5s;
-  font-size: calc(20px + 2vmin);
 }
 
 .serviceDeveloperCTA:hover .arrowCTAdev,
@@ -373,7 +360,6 @@ svg:not(:root) {
   text-align: center;
   height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
-  font-size: calc(10px + 2vmin);
   position: absolute;
 }
 
@@ -395,7 +381,6 @@ svg:not(:root) {
   width: inherit;
   height: 20vh;
   font-weight: bold;
-  font-size: calc(6px + 3vmin);
 }
 
 .developerOutline {
@@ -407,10 +392,6 @@ svg:not(:root) {
   width: 50vw;
 }
 
-.developerOutlineText {
-  font-size: calc(3vmin - 4px);
-}
-
 .developerHelloLink, .companyHelloLink {
   display: flex;
   text-align: center;
@@ -418,7 +399,6 @@ svg:not(:root) {
   justify-content: space-around;
   height: 30vh;
   width: 60vw;
-  font-size: calc(14px + 2vmin);
   padding: inherit;
 }
 
@@ -429,7 +409,6 @@ svg:not(:root) {
   text-align: center;
   height: 80vh;
   padding: 0vw 10vw 0vw 10vw;
-  font-size: calc(10px + 2vmin);
   position: absolute;
 }
 
@@ -442,7 +421,6 @@ svg:not(:root) {
   height: 20vh;
   width: inherit;
   font-weight: bold;
-  font-size: calc(6px + 3vmin);
 }
 
 .companyOutline {
@@ -453,10 +431,6 @@ svg:not(:root) {
   justify-content: space-around;
   width: 50vw;
   height: 30vh;
-}
-
-.companyOutlineText {
-  font-size: calc(3vmin - 4px),
 }
 
 .githubLink {
@@ -475,7 +449,6 @@ svg:not(:root) {
   text-align: center;
   height: 80vh;
   width: 100vw;
-  font-size: calc(10px + 2vmin);
   position: absolute;
 }
 
@@ -486,11 +459,6 @@ svg:not(:root) {
   align-items: center;
   height: 50vh;
 }
-
-/* .helloLinkContainer {
-  flex: 1;
-  min-height: 30vh;
-} */
 
 @media screen and (max-width: 750px) {
   .helloLinkContainer {
@@ -639,98 +607,67 @@ svg:not(:root) {
   }
 }
 
-.appHeader {
-  font-size: calc(10px + 2vmin);
-}
-
 .headerTitle {
   font-size: calc(6vmin - 6px);
 }
 
-@media screen and (max-width: 992px) {
-  .home,
-  .service,
-  .developer,
-  .company,
-  .hello {
-    font-size: calc(2vmin);
-  }
-  /* .rocketHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    max-width: 60vw;
-    height: 30vh;
-    margin: 0 auto 0 auto;
-  }
-  .headerTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 6vmin;
-    height: 20vh;
-  }
-  .headerDescription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 3vmin;
-    height: 20vh;
-  } */
-  .serviceOutlineText,
-  .companyOutlineText,
-  .jobProfile {
-    font-size: calc(6px + 2vmin);
-    flex-direction: column;
-  }
-  .serviceDeveloperCTA,
-  .serviceCompanyCTA,
-  .developerHelloLinkCTA,
-  .companyHelloLinkCTA {
-    font-size: calc(6px + 2vmin);
-  }
-  .developerDescription,
-  .companyDescription {
-    font-size: calc(4px + 3vmin)
-  }
-  .developerOutlineText {
-    font-size: calc(4px + 2vmin);
-  }
-  .helloEmailLink {
-    font-size: calc(6px + 4vmin);
-  }
+.headerDescription {
+  font-size: calc(4vmin - 4px);
 }
 
-@media screen and (max-width: 768px) {
-  .home,
-  .service,
-  .developer,
-  .company,
-  .hello {
-    font-size: calc(2vmin - 1px);
-  }
-  .companyContainer,
-  .developerContainer {
-    font-size: calc(8px + 2vmin);
-  }
-  .serviceOutlineText,
-  .companyOutlineText,
-  .jobProfile {
-    font-size: calc(6px + 2vmin);
-  }
-  .serviceDeveloperCTA,
-  .serviceCompanyCTA,
-  .developerHelloLinkCTA,
-  .companyHelloLinkCTA {
-    font-size: calc(5px + 2vmin)
-  }
-  .developerOutlineText {
-    font-size: calc(3px + 2vmin);
-  }
-  .helloEmailLink {
-    font-size: calc(4px + 4vmin);
-  }
+.home,
+.service,
+.developer,
+.company,
+.hello {
+  font-size: calc(2vmin);
+}
+
+.serviceHeader,
+.developerHeader,
+.companyHeader,
+.helloHeader {
+  font-size: calc(2px + 5vmin);
+}
+
+.serviceOutlineText {
+  font-size: calc(3vmin);
+}
+
+.jobProfile {
+  font-size: calc(3vmin - 2px);
+}
+.serviceDeveloperCTA,
+.serviceCompanyCTA,
+.developerHelloLinkCTA,
+.companyHelloLinkCTA {
+  font-size: calc(2px + 3vmin);
+}
+
+.serviceDeveloperCTA .arrowCTAdev:after,
+.serviceCompanyCTA .arrowCTAcomp:after,
+.developerHelloLinkCTA .arrowCTAdevHello:after,
+.companyHelloLinkCTA .arrowCTAcompHello:after {
+  font-size: calc(20px + 2vmin);
+}
+
+.developerDescription,
+.companyDescription {
+  font-size: calc(6px + 3vmin);
+}
+
+.developerOutlineText {
+  font-size: calc(3vmin - 4px);
+}
+
+.developerHelloLink, .companyHelloLink {
+  font-size: calc(14px + 2vmin);
+}
+
+.companyOutlineText {
+  font-size: calc(3vmin - 4px);
+}
+
+.helloContainer {
+  font-size: calc(10px + 2vmin);
 }
