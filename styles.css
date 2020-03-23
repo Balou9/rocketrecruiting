@@ -41,7 +41,7 @@ body {
 
 .stack {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) */
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   position: relative;
   height: 80vh;
   color: #FFFFFF;
@@ -241,6 +241,7 @@ svg:not(:root) {
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* width: 60vw; */
   height: 50vh;
   width: calc(100vw - .serviceContainer.padding);
 }
@@ -317,16 +318,14 @@ svg:not(:root) {
   background-color: var(--link-color);
 }
 
-.serviceDeveloperCTA .arrowCTAdev,
-.serviceCompanyCTA .arrowCTAcomp,
+.serviceDeveloperCTA .arrowCTAservice,
 .developerHelloLinkCTA .arrowCTAdevHello,
 .companyHelloLinkCTA .arrowCTAcompHello {
   position: relative;
   transition: 0.5s;
 }
 
-.serviceDeveloperCTA .arrowCTAdev:after,
-.serviceCompanyCTA .arrowCTAcomp:after,
+.serviceDeveloperCTA .arrowCTAservice:after,
 .developerHelloLinkCTA .arrowCTAdevHello:after,
 .companyHelloLinkCTA .arrowCTAcompHello:after {
   content: '\00bb';
@@ -338,15 +337,13 @@ svg:not(:root) {
   transition: 0.5s;
 }
 
-.serviceDeveloperCTA:hover .arrowCTAdev,
-.serviceCompanyCTA:hover .arrowCTAcomp,
+.serviceDeveloperCTA:hover .arrowCTAservice,
 .developerHelloLinkCTA:hover .arrowCTAdevHello,
 .companyHelloLinkCTA:hover .arrowCTAcompHello {
   padding-right: 10%;
 }
 
-.serviceDeveloperCTA:hover .arrowCTAdev:after,
-.serviceCompanyCTA:hover .arrowCTAcomp:after,
+.serviceDeveloperCTA:hover .arrowCTAservice:after,
 .developerHelloLinkCTA:hover .arrowCTAdevHello:after,
 .companyHelloLinkCTA:hover .arrowCTAcompHello:after {
   opacity: 1;
@@ -389,7 +386,7 @@ svg:not(:root) {
   align-items: center;
   width: inherit;
   height: 30vh;
-  width: 50vw;
+  width: 55vw;
 }
 
 .developerHelloLink, .companyHelloLink {
@@ -627,7 +624,7 @@ svg:not(:root) {
 .serviceCompanyCTA,
 .developerHelloLinkCTA,
 .companyHelloLinkCTA {
-  font-size: calc(3vmin + 2px);
+  font-size: calc(3vmin);
 }
 
 .serviceDeveloperCTA .arrowCTAdev:after,
@@ -651,7 +648,7 @@ svg:not(:root) {
 .jobProfile,
 .developerOutlineText,
 .companyOutlineText {
-  font-size: calc(3vmin - 2px);
+  font-size: calc(3vmin);
 }
 
 .helloEmailLink {

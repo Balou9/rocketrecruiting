@@ -37,6 +37,10 @@ class StackDeck {
     this.developerSayHello = document.getElementsByClassName("developerHelloLink")[0]
     this.companySayHello = document.getElementsByClassName("companyHelloLink")[0]
 
+    this.serviceCTABox = document.getElementsByClassName("serviceCTA")[0]
+    this.companyCTABox = document.getElementsByClassName("developerHelloLinkCTA")[0]
+    this.developerCTABox = document.getElementsByClassName("companyHelloLinkCTA")[0]
+
     this.deck.homeLink.style.display = "flex"
     this.deck.serviceLink.style.display = "none"
     this.deck.developerLink.style.display = "none"
@@ -49,12 +53,21 @@ class StackDeck {
     this.active.company.style.color = '#ffffff'
     this.active.hello.style.color = '#ffffff'
 
-    this.shake = function (logo) {
-      if (logo) {
-        document.getElementsByClassName(logo)[0].style.animation = "shake .8s ease-in"
-      }
+    this.shake = "shake .8s ease-in"
+    this.tree = function (className) {
       var toBeShaken = this.menu.indexOf(this.whoIsFlex())
-      this.emoj[Object.keys(this.emoj)[toBeShaken]].style.animation = "shake .8s ease-in"
+      this.emoj[Object.keys(this.emoj)[toBeShaken]].style.animation = this.shake
+
+      if (className === "logo") {
+        document.getElementsByClassName(className)[0].style.animation = this.shake
+      } else if (this.whoIsFlex() === "serviceLink") {
+        this.serviceCTABox.style.animation = this.shake
+      } else if (this.whoIsFlex() === "developerLink") {
+        this.companyCTABox.style.animation = this.shake
+      } else if (this.whoIsFlex() === "companyLink") {
+        this.developerCTABox.style.animation = this.shake
+      }
+
       return this
     }
 
@@ -101,7 +114,7 @@ class StackDeck {
           this.active[this.links[i]].style.color = this.blue
         }
       }
-      this.shake()
+      this.tree()
       return this
     }
 
@@ -110,7 +123,7 @@ class StackDeck {
         this.deck.developerLink.style.display = "flex"
         this.active.developer.style.color = this.blue
       }
-      this.shake()
+      this.tree()
       return this
     }
 
@@ -119,7 +132,7 @@ class StackDeck {
         this.deck.companyLink.style.display = "flex"
         this.active.company.style.color = this.blue
       }
-      this.shake()
+      this.tree()
       return this
     }
 
@@ -128,7 +141,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-      this.shake()
+      this.tree()
       return this
     }
 
@@ -137,7 +150,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-      this.shake()
+      this.tree()
       return this
     }
   }
@@ -166,7 +179,5 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
 })
 
 window.onload = function () {
-  stackdeck.shake("logo")
+  stackdeck.tree("logo")
 }
-
-stackdeck.shake()
