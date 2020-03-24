@@ -54,7 +54,7 @@ class StackDeck {
     this.active.hello.style.color = '#ffffff'
 
     this.shake = "shake .8s ease-in"
-    this.tree = function (className) {
+    this.shakeTree = function (className) {
       var toBeShaken = this.menu.indexOf(this.whoIsFlex())
       this.emoj[Object.keys(this.emoj)[toBeShaken]].style.animation = this.shake
 
@@ -114,7 +114,7 @@ class StackDeck {
           this.active[this.links[i]].style.color = this.blue
         }
       }
-      this.tree()
+      this.shakeTree()
       return this
     }
 
@@ -123,7 +123,7 @@ class StackDeck {
         this.deck.developerLink.style.display = "flex"
         this.active.developer.style.color = this.blue
       }
-      this.tree()
+      this.shakeTree()
       return this
     }
 
@@ -132,7 +132,7 @@ class StackDeck {
         this.deck.companyLink.style.display = "flex"
         this.active.company.style.color = this.blue
       }
-      this.tree()
+      this.shakeTree()
       return this
     }
 
@@ -141,7 +141,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-      this.tree()
+      this.shakeTree()
       return this
     }
 
@@ -150,7 +150,7 @@ class StackDeck {
         this.deck.helloLink.style.display = "flex"
         this.active.hello.style.color = this.blue
       }
-      this.tree()
+      this.shakeTree()
       return this
     }
   }
@@ -179,5 +179,5 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
 })
 
 window.onload = function () {
-  stackdeck.tree("logo")
+  stackdeck.shakeTree("logo")
 }

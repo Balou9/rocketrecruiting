@@ -20,7 +20,7 @@ body {
 
 .appHeader {
   display: flex;
-  height: 20vh;
+  height: 15vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -188,6 +188,7 @@ svg:not(:root) {
   justify-content: center;
   width: inherit;
   cursor: pointer;
+  height: 15vh;
 }
 
 .homeLink:hover,
@@ -278,6 +279,16 @@ svg:not(:root) {
   /* font-weight: bold; */
 }
 
+.appFooter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 5vh;
+}
+
 .serviceCTA {
   display: flex;
   flex-direction: row;
@@ -319,6 +330,7 @@ svg:not(:root) {
 }
 
 .serviceDeveloperCTA .arrowCTAservice,
+.serviceCompanyCTA .arrowCTAservice,
 .developerHelloLinkCTA .arrowCTAdevHello,
 .companyHelloLinkCTA .arrowCTAcompHello {
   position: relative;
@@ -326,24 +338,27 @@ svg:not(:root) {
 }
 
 .serviceDeveloperCTA .arrowCTAservice:after,
+.serviceCompanyCTA .arrowCTAservice:after,
 .developerHelloLinkCTA .arrowCTAdevHello:after,
 .companyHelloLinkCTA .arrowCTAcompHello:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top: 50%;
+  top: 45%;
   right: -20%;
   transform: translate(0,-50%);
   transition: 0.5s;
 }
 
 .serviceDeveloperCTA:hover .arrowCTAservice,
+.serviceCompanyCTA:hover .arrowCTAservice,
 .developerHelloLinkCTA:hover .arrowCTAdevHello,
 .companyHelloLinkCTA:hover .arrowCTAcompHello {
   padding-right: 10%;
 }
 
 .serviceDeveloperCTA:hover .arrowCTAservice:after,
+.serviceCompanyCTA:hover .arrowCTAservice:after,
 .developerHelloLinkCTA:hover .arrowCTAdevHello:after,
 .companyHelloLinkCTA:hover .arrowCTAcompHello:after {
   opacity: 1;
@@ -628,10 +643,13 @@ svg:not(:root) {
 }
 
 .serviceDeveloperCTA .arrowCTAdev:after,
-.serviceCompanyCTA .arrowCTAcomp:after,
+.serviceCompanyCTA .arrowCTAcomp:after {
+  font-size: calc(2vmin + 15px);
+}
+
 .developerHelloLinkCTA .arrowCTAdevHello:after,
 .companyHelloLinkCTA .arrowCTAcompHello:after {
-  font-size: calc(2vmin + 20px);
+  font-size: calc(3vmin);
 }
 
 .developerDescription,
@@ -653,4 +671,8 @@ svg:not(:root) {
 
 .helloEmailLink {
   font-size: calc(4vmin + 10px);
+}
+
+.appFooter {
+  font-size: 2vmin;
 }
