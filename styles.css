@@ -39,6 +39,22 @@ body {
   justify-content: center;
 }
 
+.serviceEmoji {
+  content: '\1F30D';
+}
+
+.developerEmoji {
+  content: ;
+}
+
+.companyEmoji {
+  content: ;
+}
+
+.helloEmoji {
+  content: ;
+}
+
 .stack {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
