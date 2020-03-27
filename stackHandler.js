@@ -26,7 +26,7 @@ class StackDeck {
       hello: document.getElementsByClassName("helloEmoji")[0]
     }
 
-    this.blue = "#5fb3ed"
+    this.blue = "#ADEFD1FF"
 
     this.menu = Object.keys(this.deck)
     this.links = Object.keys(this.active)
@@ -60,13 +60,14 @@ class StackDeck {
 
       if (className === "logo") {
         document.getElementsByClassName(className)[0].style.animation = this.shake
-      } else if (this.whoIsFlex() === "serviceLink") {
-        this.serviceCTABox.style.animation = this.shake
-      } else if (this.whoIsFlex() === "developerLink") {
-        this.companyCTABox.style.animation = this.shake
-      } else if (this.whoIsFlex() === "companyLink") {
-        this.developerCTABox.style.animation = this.shake
       }
+      // } else if (this.whoIsFlex() === "serviceLink") {
+      //   this.serviceCTABox.style.animation = this.shake
+      // } else if (this.whoIsFlex() === "developerLink") {
+      //   this.companyCTABox.style.animation = this.shake
+      // } else if (this.whoIsFlex() === "companyLink") {
+      //   this.developerCTABox.style.animation = this.shake
+      // }
 
       return this
     }
@@ -178,6 +179,6 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
   stackdeck.deleteActiveDeck(e).handleCompanyHello(e)
 })
 
-window.onload = function () {
-  stackdeck.shakeTree("logo")
-}
+// window.onload = function () {
+//   stackdeck.shakeTree("logo")
+// }

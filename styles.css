@@ -8,9 +8,11 @@ html {
 }
 
 :root {
-  --link-color: rgba(95, 147, 237, 1);
-  --navBar-background-color: rgba(95, 147, 237, 0.5);
+  --link-color: #00203FFF;
+  --navBar-background-color: #ADEFD1FF;
   /* --link-color: #3D3DFF; */
+  --dark-blue: #00203FFF;
+  --bright-blue: #ADEFD1FF;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #000000;
+  background-color: #00203FFF;
 }
 
 .serviceEmoji,
@@ -44,8 +46,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   position: relative;
   height: 80vh;
-  color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.99);
+  color: #000000;
+  background-color: #ADEFD1FF;
 }
 
 .animationHeader {
@@ -109,6 +111,7 @@ body {
   width: 23vw;
   height: 23vh;
   fill: none;
+  /* background-color: var(--dark-blue); */
 }
 
 .miniLogo {
@@ -128,7 +131,8 @@ svg:not(:root) {
   cx: 32;
   cy: 32;
   r: 32;
-  fill: transparent;
+  fill: var(--dark-blue);
+;
   stroke: none;
   transform-origin: 0px 0px;
 }
@@ -191,13 +195,13 @@ svg:not(:root) {
   height: 15vh;
 }
 
-.homeLink:hover,
+/* .homeLink:hover,
 .serviceLink:hover,
 .developerLink:hover,
 .companyLink:hover,
 .helloLink:hover {
   background-color: var(--navBar-background-color);
-}
+} */
 
 .home,
 .service,
@@ -284,7 +288,7 @@ svg:not(:root) {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #000000;
+  background-color: #00203FFF;
   color: #FFFFFF;
   height: 5vh;
 }
@@ -308,9 +312,9 @@ svg:not(:root) {
   justify-content: center;
   align-items: center;
   padding: 2vh 2vw 2vh 2vw;
-  border: solid 1px var(--link-color);
+  border: solid 1px var(--dark-blue);
   border-radius: 4px;
-  color: var(--link-color);
+  color: var(--dark-blue);
   background-color: transparent;
   text-decoration: none;
   width: 100vw;
@@ -326,7 +330,7 @@ svg:not(:root) {
 .developerHelloLinkCTA:hover,
 .companyHelloLinkCTA:hover {
   color: #FFFFFF;
-  background-color: var(--link-color);
+  background-color: var(--dark-blue);
 }
 
 .serviceDeveloperCTA .arrowCTAservice,
@@ -447,7 +451,7 @@ svg:not(:root) {
 
 .githubLink {
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--dark-blue);
 }
 
 .githubLink:hover {
@@ -478,11 +482,11 @@ svg:not(:root) {
   border-radius: 4px;
   /* width: 50%; */
   height: 10vh;
-  color: var(--link-color);
+  color: var(--dark-blue);
 }
 
 .helloEmailLink:hover {
-  color: #FFFFFF;
+  opacity: 0.8;
   font-weight: bold;
 }
 
@@ -569,7 +573,7 @@ svg:not(:root) {
 
 @keyframes animation-outterColorPalatte {
   0% {
-    stroke: var(--link-color);
+    stroke: var(--dark-blue);
   }
   33% {
     stroke: #a32f80;
@@ -578,7 +582,7 @@ svg:not(:root) {
     stroke: #ff6363;
   }
   100% {
-    stroke: var(--link-color);
+    stroke: var(--dark-blue);
   }
 }
 
@@ -590,7 +594,7 @@ svg:not(:root) {
     stroke: #eb7070;
   }
   66% {
-    stroke: var(--link-color);
+    stroke: var(--dark-blue);
   }
   100% {
     stroke: #ff6161;
@@ -605,7 +609,7 @@ svg:not(:root) {
     stroke: #eb7070;
   }
   66% {
-    stroke: var(--link-color);
+    stroke: var(--dark-blue);
   }
   100% {
     stroke: #64e291;
