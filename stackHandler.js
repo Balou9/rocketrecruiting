@@ -41,6 +41,9 @@ class StackDeck {
     this.companyCTABox = document.getElementsByClassName("developerHelloLinkCTA")[0]
     this.developerCTABox = document.getElementsByClassName("companyHelloLinkCTA")[0]
 
+    this.leftArrow = document.getElementsByClassName("leftArrow")[0]
+    this.rightArrow = document.getElementsByClassName("rightArrow")[0]
+
     this.deck.homeLink.style.display = "flex"
     this.deck.serviceLink.style.display = "none"
     this.deck.developerLink.style.display = "none"
@@ -61,13 +64,6 @@ class StackDeck {
       if (className === "logo") {
         document.getElementsByClassName(className)[0].style.animation = this.shake
       }
-      // } else if (this.whoIsFlex() === "serviceLink") {
-      //   this.serviceCTABox.style.animation = this.shake
-      // } else if (this.whoIsFlex() === "developerLink") {
-      //   this.companyCTABox.style.animation = this.shake
-      // } else if (this.whoIsFlex() === "companyLink") {
-      //   this.developerCTABox.style.animation = this.shake
-      // }
 
       return this
     }
@@ -154,6 +150,32 @@ class StackDeck {
       this.shakeTree()
       return this
     }
+
+    this.arrowNavigationHandler = function (event, direction) {
+      var activeDeck = this.whoIsFlex()
+      var activeIndex = this.menu.indexOf(activeDeck)
+
+
+      if (direction === "left") {
+        if (activeIndex === 0) {
+          // this.leftArrow.style.display = "none"
+        } else {
+          this.deck[activeDeck].style.display = "none"
+          this.deck[this.menu[activeIndex - 1]].style.display = "flex"
+        }
+      }
+
+      if (direction === "right") {
+        if (activeIndex === this.menu.length - 1) {
+          // this.rightArrow.style.display = "none"
+        } else {
+          this.deck[activeDeck].style.display = "none"
+          this.deck[this.menu[activeIndex + 1]].style.display = "flex"
+        }
+      }
+
+      return this
+    }
   }
 }
 
@@ -179,6 +201,10 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
   stackdeck.deleteActiveDeck(e).handleCompanyHello(e)
 })
 
-// window.onload = function () {
-//   stackdeck.shakeTree("logo")
-// }
+stackdeck.leftArrow.addEventListener("click", function (e) {
+  stackdeck.arrowNavigationHandler(e, "left")
+})
+
+stackdeck.rightArrow.addEventListener("click", function (e) {
+  stackdeck.arrowNavigationHandler(e, "right")
+})
