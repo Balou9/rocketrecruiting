@@ -51,10 +51,10 @@ class StackDeck {
     this.deck.helloLink.style.display = "none"
 
     this.active.home.style.color = this.blue
-    this.active.service.style.color = '#ffffff'
-    this.active.developer.style.color = '#ffffff'
-    this.active.company.style.color = '#ffffff'
-    this.active.hello.style.color = '#ffffff'
+    this.active.service.style.color = "#ffffff"
+    this.active.developer.style.color = "#ffffff"
+    this.active.company.style.color = "#ffffff"
+    this.active.hello.style.color = "#ffffff"
 
     this.shake = "shake .8s ease-in"
     this.shakeTree = function (className) {
@@ -71,6 +71,7 @@ class StackDeck {
     this.shakeReset = function () {
       for (var i = 0; i < Object.keys(this.emoj).length; i++) {
         this.emoj[Object.keys(this.emoj)[i]].style.animation = ""
+        this.active[this.links[i]].style.color = "#ffffff"
       }
       return this
     }
@@ -96,10 +97,9 @@ class StackDeck {
     this.deleteActiveDeck = function (event) {
       this.shakeReset()
       if (event.target.classList.value !== "navBar") {
-        var activeDeck = this.whoIsFlex()
-        var activeLink = this.menu.indexOf(activeDeck)
+        var activeLink = this.menu.indexOf(this.whoIsFlex())
         this.active[this.links[activeLink]].style.color = '#ffffff'
-        this.deck[activeDeck].style.display = "none"
+        this.deck[this.whoIsFlex()].style.display = "none"
       }
       return this
     }
@@ -152,29 +152,28 @@ class StackDeck {
     }
 
     this.arrowNavigationHandler = function (event, direction) {
-      var activeDeck = this.whoIsFlex()
-      var activeIndex = this.menu.indexOf(activeDeck)
-
+      var activeIndex = this.menu.indexOf(this.whoIsFlex())
 
       if (direction === "left") {
         if (activeIndex === 0) {
-          // this.leftArrow.style.display = "none"
+          return this
         } else {
-          this.deck[activeDeck].style.display = "none"
+          this.deleteActiveDeck(event)
           this.deck[this.menu[activeIndex - 1]].style.display = "flex"
+          this.active[this.links[activeIndex - 1]].style.color = this.blue
         }
       }
 
       if (direction === "right") {
         if (activeIndex === this.menu.length - 1) {
-          // this.rightArrow.style.display = "none"
+          return this
         } else {
-          this.deck[activeDeck].style.display = "none"
+          this.deleteActiveDeck(event)
           this.deck[this.menu[activeIndex + 1]].style.display = "flex"
+          this.active[this.links[activeIndex + 1]].style.color = this.blue
         }
       }
 
-      return this
     }
   }
 }
