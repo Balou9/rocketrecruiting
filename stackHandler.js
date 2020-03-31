@@ -174,23 +174,6 @@ class StackDeck {
           this.active[this.links[activeIndex + 1]].style.color = this.blue
         }
       }
-
-    }
-
-    this.leftBounds = function () {
-      if (this.deck.animationHeader.style.display === "flex") {
-        this.leftArrow.style.visibility === "hidden"
-      }
-
-      return this
-    }
-
-    this.rightBounds = function () {
-      if (this.deck.helloContainer.style.display === "flex") {
-        this.rightArrow.style.visibility === "hidden"
-      }
-
-      return this
     }
   }
 }
