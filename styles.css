@@ -39,13 +39,30 @@ body {
   cursor: pointer;
 }
 
+.leftArrow:hover,
+.rightArrow:hover {
+  background-color: var(--light-blue);
+  opacity: 0.5;
+}
+
+.leftArrow:visited,
+.rightArrow:visited {
+  background-color: var(--dark-blue);
+  opacity: 0.5;
+}
+
+.leftArrow:active,
+.rightArrow:active {
+  background-color: var(--light-blue);
+  opacity: 0.8;
+}
+
 .appHeader {
   display: flex;
   height: 15vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #00203FFF;
 }
 
 .serviceEmoji,
@@ -55,7 +72,7 @@ body {
   height: 3vh;
   width: 3vw;
   display: flex;
-  font-size: 1em;
+  font-size: 0.9em;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -212,7 +229,45 @@ svg:not(:root) {
   width: inherit;
   cursor: pointer;
   height: 15vh;
+  background-color: #00203FFF;
 }
+
+/* .home:link,
+.serviceLink:link,
+.developerLink:link,
+.companyLink:link,
+.helloLink:link {
+  background-color: var(--dark-blue);
+} */
+
+.homeLink:hover,
+.serviceLink:hover,
+.developerLink:hover,
+.companyLink:hover,
+.helloLink:hover {
+  background-color: var(--dark-blue);
+  opacity: 0.8;
+}
+
+.homeLink:active,
+.serviceLink:active,
+.developerLink:active,
+.companyLink:active,
+.helloLink:active {
+  background-color: var(--dark-blue);
+  opacity: 0.76;
+}
+
+.homeLink:visited,
+.serviceLink:visited,
+.developerLink:visited,
+.companyLink:visited,
+.helloLink:visited {
+  background-color: var(--dark-blue);
+  opacity: 0.7;
+}
+
+
 
 /* .homeLink:hover,
 .serviceLink:hover,
@@ -361,9 +416,27 @@ svg:not(:root) {
 .serviceCompanyCTA:hover,
 .developerHelloLinkCTA:hover,
 .companyHelloLinkCTA:hover {
+  background-color: var(--dark-blue);
+  opacity: 0.9;
+}
+
+.serviceDeveloperCTA:active,
+.serviceCompanyCTA:active,
+.developerHelloLinkCTA:active,
+.companyHelloLinkCTA:active {
   color: #FFFFFF;
   background-color: var(--dark-blue);
+  opacity: 0.8;
 }
+
+.serviceDeveloperCTA:visited,
+.serviceCompanyCTA:visited,
+.developerHelloLinkCTA:visited,
+.companyHelloLinkCTA:visited {
+  background-color: var(--dark-blue);
+  opacity: 0.85;
+}
+
 
 .serviceDeveloperCTA .arrowCTAservice,
 .serviceCompanyCTA .arrowCTAservice,
@@ -411,13 +484,23 @@ svg:not(:root) {
   position: absolute;
 }
 
-.developerContent, .companyContent {
+.developerContent,
+.companyContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   height: 50vh;
-  width: calc(100vw - .developerContainer.padding);
+  width: 80vw;
+}
+
+.helloContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 80vw;
 }
 
 .developerDescription {
@@ -500,26 +583,43 @@ svg:not(:root) {
   position: absolute;
 }
 
+.helloDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2vmin;
+  height: 25vh;
+  width: 60vw;
+}
+
 .helloCTA {
   display: flex;
   flex-direction: row;
   text-align: center;
   align-items: center;
-  height: 50vh;
+  height: 35vh;
 }
 
 .helloEmailLink {
   padding: 2vh 2.5vw 2vh 2.5vw;
   border: 2px solid transparent;
   border-radius: 4px;
-  /* width: 50%; */
   height: 10vh;
   color: var(--dark-blue);
 }
 
 .helloEmailLink:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   font-weight: bold;
+}
+
+.helloEmailLink:active {
+  opacity: 0.8;
+}
+
+.helloEmailLink:visited {
+  opacity: 0.85;
 }
 
 @keyframes shake {
@@ -689,13 +789,13 @@ svg:not(:root) {
 }
 
 .developerDescription,
-.companyDescription {
+.companyDescription,
+.helloDescription {
   font-size: calc(3vmin + 6px);
 }
 
-
-
-.serviceOutlineText {
+.serviceOutlineText,
+.helloDescription {
   font-size: calc(3vmin + 2px);
 }
 

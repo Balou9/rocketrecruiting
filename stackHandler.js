@@ -152,6 +152,7 @@ class StackDeck {
     }
 
     this.arrowNavigationHandler = function (event, direction) {
+
       var activeIndex = this.menu.indexOf(this.whoIsFlex())
 
       if (direction === "left") {
@@ -174,6 +175,22 @@ class StackDeck {
         }
       }
 
+    }
+
+    this.leftBounds = function () {
+      if (this.deck.animationHeader.style.display === "flex") {
+        this.leftArrow.style.visibility === "hidden"
+      }
+
+      return this
+    }
+
+    this.rightBounds = function () {
+      if (this.deck.helloContainer.style.display === "flex") {
+        this.rightArrow.style.visibility === "hidden"
+      }
+
+      return this
     }
   }
 }
@@ -202,8 +219,14 @@ stackdeck.companySayHello.addEventListener("click", function (e) {
 
 stackdeck.leftArrow.addEventListener("click", function (e) {
   stackdeck.arrowNavigationHandler(e, "left")
+  // stackdeck.leftBounds()
 })
 
 stackdeck.rightArrow.addEventListener("click", function (e) {
   stackdeck.arrowNavigationHandler(e, "right")
+  // stackdeck.rightBounds()
 })
+
+// window.onload = function () {
+//   stackdeck.leftBounds()
+// }
