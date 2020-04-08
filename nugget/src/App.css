@@ -2,18 +2,207 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+:root {
+  --dark-blue: #00203FFF;
+  --light-blue: #ADEFD1FF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.animationHeader,
+.serviceContainer,
+.developerContainer,
+.companyContainer,
+.helloContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--light-blue);
+  text-align: center;
+}
+
+.col1,
+.col2,
+.col3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 60vw;
+}
+
+.col1 {
+  font-weight: bold;
+  font-size: 3vmin;
+}
+
+.col2 {
+  font-size: 2vmin;
+}
+
+.logo {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  transform: rotate3d(1,1,1,0deg);
+  width: 23vw;
+  height: 23vh;
+  fill: none;
+}
+
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.circleFrame1 {
+  cx: 32;
+  cy: 32;
+  r: 32;
+  fill: var(--dark-blue);
+  stroke: none;
+  transform-origin: 0px 0px;
+}
+
+.circleFrame2 {
+  cx: 32;
+  cy: 32;
+  r: 30;
+  opacity: 0.5;
+  transform-origin: 0px 0px;
+  fill: none;
+  animation-name: animation-outterColorPalatte;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.circle2 {
+  cx: 32;
+  cy: 32;
+  r: 24;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transform-origin: 50% 50%;
+  fill: none;
+  animation-name: animation-twinner, animation-twinnerColorPalatte;
+  animation-duration: 4s,8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.circle1 {
+  cx: 32;
+  cy: 32;
+  r: 24;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transform-origin: 50% 50%;
+  fill: none;
+  animation-name: animation-inner, animation-innerColorPalatte;
+  animation-duration: 4s,8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.rocketHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTitle {
+  font-size: 4vmin;
+  font-weight: bold;
+}
+
+.headerDescription {
+  font-size: 3vmin;
+
+}
+
+
+/* @keyframes shake {
+  0%{
+    transform: translate(0);
+  }
+  20%,40%,60%,80%{
+    transform: translate(0.3vw);
+  }
+  10%,30%,50%{
+    transform: translate(-0.2vh);
+  }
+
+  70%,100%{
+    transform: translate(0);
+  }
+} */
+
+@keyframes animation-twinner {
+  50% {
+    transform: rotate3d(0,2,1,180deg);
+  }
+  100% {
+    transform: rotate3d(0,2,1,360deg);
   }
 }
 
-.App-header {
+@keyframes animation-inner {
+  50% {
+    transform: rotate3d(2,0,1,180deg);
+  }
+  100% {
+    transform: rotate3d(2,0,1,360deg);
+  }
+}
+
+@keyframes animation-outterColorPalatte {
+  0% {
+    stroke: var(--dark-blue);
+  }
+  33% {
+    stroke: #a32f80;
+  }
+  66% {
+    stroke: #ff6363;
+  }
+  100% {
+    stroke: var(--dark-blue);
+  }
+}
+
+@keyframes animation-twinnerColorPalatte {
+  0% {
+    stroke: #ff6161;
+  }
+  33% {
+    stroke: #eb7070;
+  }
+  66% {
+    stroke: var(--dark-blue);
+  }
+  100% {
+    stroke: #ff6161;
+  }
+}
+
+@keyframes animation-innerColorPalatte {
+  0% {
+    stroke: #64e291;
+  }
+  33% {
+    stroke: #eb7070;
+  }
+  66% {
+    stroke: var(--dark-blue);
+  }
+  100% {
+    stroke: #64e291;
+  }
+}
+
+/* .App-header {
   background-color: #ADEFD1FF;
   min-height: 100vh;
   display: flex;
@@ -35,4 +224,15 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* .App-logo {
+height: 40vmin;
+pointer-events: none;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+.App-logo {
+animation: App-logo-spin infinite 20s linear;
+}
+} */
