@@ -16,9 +16,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  /* background-color: var(--light-blue); */
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--light-blue);
   text-align: center;
 }
 
@@ -110,26 +110,16 @@ svg:not(:root) {
 .rocketHeader {
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
 }
 
 .headerTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 4vmin;
   font-weight: bold;
-  flex: 1;
 }
 
 .headerDescription {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 3vmin;
-  flex: 1
+
 }
 
 
