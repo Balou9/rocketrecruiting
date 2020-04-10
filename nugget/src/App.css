@@ -1,11 +1,47 @@
-.App {
-  text-align: center;
-}
 
 
 :root {
   --dark-blue: #00203FFF;
   --light-blue: #ADEFD1FF;
+}
+
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: var(--dark-blue);
+}
+
+.AppHeader,
+.AppFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  color: #FFFFFF;
+  z-index: 0;
+  /* overflow: hidden; */
+  background-color: var(--dark-blue);
+}
+
+.AppHeader {
+  top: 0;
+}
+
+.AppFooter {
+  bottom: 0;
+}
+
+.Stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* overflow: hidden; */
 }
 
 .animationHeader,
@@ -17,7 +53,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: var(--light-blue);
   text-align: center;
 }
@@ -44,14 +80,13 @@
 
 .logo {
   display: flex;
-  max-width: 100%;
+  /* max-width: 100%; */
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
   width: 23vw;
   height: 23vh;
   fill: none;
 }
-
 
 svg:not(:root) {
   overflow: hidden;
@@ -119,25 +154,7 @@ svg:not(:root) {
 
 .headerDescription {
   font-size: 3vmin;
-
 }
-
-
-/* @keyframes shake {
-  0%{
-    transform: translate(0);
-  }
-  20%,40%,60%,80%{
-    transform: translate(0.3vw);
-  }
-  10%,30%,50%{
-    transform: translate(-0.2vh);
-  }
-
-  70%,100%{
-    transform: translate(0);
-  }
-} */
 
 @keyframes animation-twinner {
   50% {
@@ -201,38 +218,3 @@ svg:not(:root) {
     stroke: #64e291;
   }
 }
-
-/* .App-header {
-  background-color: #ADEFD1FF;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* .App-logo {
-height: 40vmin;
-pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-.App-logo {
-animation: App-logo-spin infinite 20s linear;
-}
-} */

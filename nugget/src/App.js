@@ -8,10 +8,23 @@ import { Hello } from './components/Hello.js'
 
 import './App.css';
 
+
 function App() {
-  return (
-    <Home/>
-  );
+    return (
+      <div className="AppContainer">
+        <header className="AppHeader">
+          Nugget Digital
+        </header>
+        <div className="Stack">
+          <Home/>
+          <Service/>
+          <Developer/>
+          <Company/>
+          <Hello/>
+        </div>
+        <footer className="AppFooter">Nugget Digital 2020</footer>
+      </div>
+    );
 }
 
 export default App;
