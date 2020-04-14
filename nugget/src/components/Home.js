@@ -18,7 +18,9 @@ export class Home extends React.Component {
         <div className="col3">
           <div className="rocketHeader">
             <div className="headerTitle">Nugget Digital</div>
-            <div className="headerDescription">Recruiting West African Developers for European Businesses</div>
+            <div className="headerDescription">
+              <a>Recruiting West African Developers for European Businesses</a>
+              </div>
           </div>
         </div>
       </div>

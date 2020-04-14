@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-
 export class Service extends React.Component {
   render () {
     return (

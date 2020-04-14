@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-
 export class Company extends React.Component {
   render () {
     return (
-      <div className="companyContainer">
+      <div className="companyContainer" ref={this.companyRef}>
         <div className="col1">
           Enrich your team with talented developers.
         </div>

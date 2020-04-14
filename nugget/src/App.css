@@ -10,11 +10,36 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
   width: 100%;
   background-color: var(--dark-blue);
 }
 
-.AppHeader,
+.AppHeader {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  color: #FFFFFF;
+  z-index: 0;
+  background-color: var(--dark-blue);
+  top: 0;
+}
+
+.nuggetLink,
+.serviceLink,
+.developerLink,
+.companyLink,
+.helloLink {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
 .AppFooter {
   display: flex;
   flex-direction: column;
@@ -25,23 +50,8 @@
   height: 10vh;
   color: #FFFFFF;
   z-index: 0;
-  /* overflow: hidden; */
   background-color: var(--dark-blue);
-}
-
-.AppHeader {
-  top: 0;
-}
-
-.AppFooter {
   bottom: 0;
-}
-
-.Stack {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* overflow: hidden; */
 }
 
 .animationHeader,

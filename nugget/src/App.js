@@ -1,29 +1,41 @@
 import React from 'react';
+import './App.css';
 
+import { Header, Footer } from './components/Frame.js'
 import { Home } from './components/Home.js'
 import { Service } from './components/Service.js'
 import { Developer } from './components/Developer.js'
 import { Company } from './components/Company.js'
 import { Hello } from './components/Hello.js'
-
-import './App.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
     return (
-      <div className="AppContainer">
-        <header className="AppHeader">
-          Nugget Digital
-        </header>
-        <div className="Stack">
-          <Home/>
-          <Service/>
-          <Developer/>
-          <Company/>
-          <Hello/>
-        </div>
-        <footer className="AppFooter">Nugget Digital 2020</footer>
-      </div>
+      <Router>
+        <Header/>
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="/service">
+              <Service/>
+            </Route>
+            <Route path="/developer">
+              <Developer/>
+            </Route>
+            <Route path="/company">
+              <Company/>
+            </Route>
+            <Route path="/hello">
+              <Hello/>
+            </Route>
+          </Switch>
+        <Footer/>
+      </Router>
     );
 }
 
