@@ -1,8 +1,7 @@
-
-
 :root {
   --dark-blue: #00203FFF;
   --light-blue: #ADEFD1FF;
+  color: var(--dark-blue);
 }
 
 .AppContainer {
@@ -38,6 +37,17 @@
   text-align: center;
   justify-content: center;
   flex-basis: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.nuggetLink:active,
+.serviceLink:active,
+.developerLink:active,
+.companyLink:active,
+.helloLink:active {
+  color: var(--light-blue);
 }
 
 .AppFooter {
@@ -62,7 +72,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  padding: 10vh 0vw 10vh 0vw;
+  height: 80vh;
   width: 100%;
   background-color: var(--light-blue);
   text-align: center;
@@ -88,9 +99,61 @@
   font-size: 2vmin;
 }
 
+.serviceContainer .col3 {
+  flex-direction: row;
+}
+
+.developerCta,
+.companyCta,
+.helloCta  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 2vw 2vh 2vw;
+  border: solid 1px var(--dark-blue);
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: var(--dark-blue);
+  width: 20vw;
+  font-weight: bold;
+  margin: auto;
+  text-decoration: none;
+}
+
+.developerCta:hover,
+.companyCta:hover,
+.helloCta:hover {
+  opacity: 0.9;
+}
+
+.developerCta:active,
+.companyCta:active,
+.helloCta:active {
+  opacity: 0.8;
+}
+
+.developerCta:visited,
+.companyCta:visited,
+.helloCta:visited {
+  opacity: 0.85;
+}
+
+.serviceCta,
+.githubLink,
+.contactCta {
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.serviceCta:hover,
+.githubLink:hover,
+.contactCta:hover {
+  font-weight: bold;
+}
+
+
 .logo {
   display: flex;
-  /* max-width: 100%; */
   margin: 0 auto;
   transform: rotate3d(1,1,1,0deg);
   width: 23vw;

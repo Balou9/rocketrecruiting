@@ -2,11 +2,14 @@ import React from 'react';
 import './App.css';
 
 import { Header, Footer } from './components/Frame.js'
-import { Home } from './components/Home.js'
-import { Service } from './components/Service.js'
-import { Developer } from './components/Developer.js'
-import { Company } from './components/Company.js'
-import { Hello } from './components/Hello.js'
+import {
+  Home,
+  Service,
+  Developer,
+  Company,
+  Hello
+} from './components/Screens.js'
+
 import {
   BrowserRouter as Router,
   Switch,
