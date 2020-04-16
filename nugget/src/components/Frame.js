@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export class Header extends React.Component {
   render () {
     return (
       <div className="AppHeader">
-        <Link className ="nuggetLink" to ="/">Nugget Digital</Link>
-        <Link className="serviceLink" to ="/service">Service</Link>
-        <Link className="developerLink" to ="/developer">Developer</Link>
-        <Link className="companyLink" to ="/company">Company</Link>
-        <Link className="helloLink" to ="/hello">Hello</Link>
+        <NavLink className ="nuggetLink" to ="/">Nugget Digital</NavLink>
+        <NavLink className="serviceLink" to ="/service">Service</NavLink>
+        <NavLink className="developerLink" to ="/developer">Developer</NavLink>
+        <NavLink className="companyLink" to ="/company">Company</NavLink>
+        <NavLink className="helloLink" to ="/hello">Hello</NavLink>
       </div>
     )
   }

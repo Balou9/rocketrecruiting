@@ -64,6 +64,7 @@
   bottom: 0;
 }
 
+
 .animationHeader,
 .serviceContainer,
 .developerContainer,
@@ -103,6 +104,38 @@
   flex-direction: row;
 }
 
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  font-size: 4vmin;
+  font-weight: bold;
+}
+
+.serviceCta {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocketHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.animationHeader .col3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .developerCta,
 .companyCta,
 .helloCta  {
@@ -114,6 +147,7 @@
   border-radius: 4px;
   color: #FFFFFF;
   background-color: var(--dark-blue);
+  height: 5vh;
   width: 20vw;
   font-weight: bold;
   margin: auto;
@@ -139,18 +173,24 @@
 }
 
 .serviceCta,
-.githubLink,
-.contactCta {
+.contactCta,
+.githubLink  {
   color: var(--dark-blue);
+}
+
+.githubLink {
   text-decoration: none;
 }
 
 .serviceCta:hover,
-.githubLink:hover,
 .contactCta:hover {
   font-weight: bold;
 }
 
+.githubLink {
+  display: inline;
+  font-weight: bold;
+}
 
 .logo {
   display: flex;
@@ -215,20 +255,6 @@ svg:not(:root) {
   animation-iteration-count: infinite;
 }
 
-.rocketHeader {
-  display: flex;
-  flex-direction: column;
-}
-
-.headerTitle {
-  font-size: 4vmin;
-  font-weight: bold;
-}
-
-.headerDescription {
-  font-size: 3vmin;
-}
-
 @keyframes animation-twinner {
   50% {
     transform: rotate3d(0,2,1,180deg);
@@ -290,4 +316,25 @@ svg:not(:root) {
   100% {
     stroke: #64e291;
   }
+}
+
+/* font-size ------------------------------------- */
+
+.AppHeader,
+.AppFooter {
+  font-size: 2vmin;
+}
+
+.col2 {
+  font-size: calc(2vmin + 4px);
+}
+
+.serviceCta {
+  font-size: 3vmin;
+}
+
+.developerCta,
+.companyCta,
+.helloCta  {
+  font-size: 2vmin;
 }

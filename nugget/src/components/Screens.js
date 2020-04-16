@@ -5,7 +5,9 @@ export class Home extends React.Component {
   render () {
     return (
       <div className="animationHeader">
-        <div className="col1"></div>
+        <div className="col1">
+          <div className="headerTitle">Nugget Digital</div>
+        </div>
         <div className="col2">
           <svg className="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <circle className="circleFrame1"></circle>
@@ -18,10 +20,7 @@ export class Home extends React.Component {
         </div>
         <div className="col3">
           <div className="rocketHeader">
-            <div className="headerTitle">Nugget Digital</div>
-            <div className="headerDescription">
-              <NavLink className="serviceCta" to="/service">Recruiting West African Developers <br/>for European Businesses</NavLink>
-              </div>
+            <NavLink className="serviceCta" to="/service">Recruiting West African Developers <br/>for European Businesses</NavLink>
           </div>
         </div>
       </div>
@@ -63,9 +62,11 @@ export class Developer extends React.Component {
           You're interested in working abroad?
         </div>
         <div className="col2">
+          <div className="developerOutline">
           Take the opportunity to apply for software developer jobs in European IT Companies.
           Send us an email in which you introduce yourself and your programming skills.
-          Link your <a className="githubLink" href="https://github.com">Github</a> profile or add an attachment/link to a project or repository you have contributed to.
+          Link your <a className="githubLink" href="https://github.com"> Github </a> profile or add an attachment/link to a project or repository you have contributed to.
+          </div>
         </div>
         <div className="col3">
           <Link className="helloCta" to="/hello" variant="contained" color="primary">Apply for a job</Link>
