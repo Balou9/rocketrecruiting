@@ -25,6 +25,7 @@
   z-index: 0;
   background-color: var(--dark-blue);
   top: 0;
+  border-bottom: 0.5px solid var(--dark-blue);
 }
 
 .nuggetLink,
@@ -42,14 +43,6 @@
   color: #FFFFFF;
 }
 
-/* .nuggetLink:active,
-.serviceLink:active,
-.developerLink:active,
-.companyLink:active,
-.helloLink:active {
-  color: var(--light-blue);
-} */
-
 .AppFooter {
   display: flex;
   flex-direction: column;
@@ -63,7 +56,6 @@
   background-color: var(--dark-blue);
   bottom: 0;
 }
-
 
 .animationHeader,
 .serviceContainer,
@@ -320,7 +312,10 @@ svg:not(:root) {
 
 /* font-size ------------------------------------- */
 
-.AppHeader,
+.AppHeader {
+  font-size: calc(2vmin + 2px);
+}
+
 .AppFooter {
   font-size: 2vmin;
 }
@@ -336,5 +331,5 @@ svg:not(:root) {
 .developerCta,
 .companyCta,
 .helloCta  {
-  font-size: 2vmin;
+  font-size: calc(2vmin + 4px);
 }
