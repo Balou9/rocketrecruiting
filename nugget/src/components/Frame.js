@@ -2,11 +2,14 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 export class Header extends React.Component {
-  render () {
+  constructor (props) {
+    super(props)
     this.active = {
       "backgroundColor": "#ADEFD1FF",
       "color": "#00203FFF",
       "textDecoration": "underline"}
+  }
+  render () {
     return (
       <div className="AppHeader">
         <NavLink className="nuggetLink" to="/home" activeStyle={this.active}>Nugget Digital</NavLink>

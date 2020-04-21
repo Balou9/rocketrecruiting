@@ -25,7 +25,6 @@
   z-index: 0;
   background-color: var(--dark-blue);
   top: 0;
-  border-bottom: 0.5px solid var(--dark-blue);
 }
 
 .nuggetLink,
@@ -81,15 +80,6 @@
   justify-content: center;
   flex: 1;
   width: 50vw;
-}
-
-.col1 {
-  font-weight: bold;
-  font-size: 3vmin;
-}
-
-.col2 {
-  font-size: 2vmin;
 }
 
 .serviceContainer .col3 {
@@ -313,11 +303,16 @@ svg:not(:root) {
 /* font-size ------------------------------------- */
 
 .AppHeader {
-  font-size: calc(2vmin + 2px);
+  font-size: calc(2vmin + 4px);
 }
 
 .AppFooter {
   font-size: 2vmin;
+}
+
+.col1 {
+  font-weight: bold;
+  font-size: calc(3vmin + 2px);
 }
 
 .col2 {
@@ -325,11 +320,15 @@ svg:not(:root) {
 }
 
 .serviceCta {
-  font-size: 3vmin;
+  font-size: calc(3vmin + 2px);
 }
 
 .developerCta,
 .companyCta,
 .helloCta  {
   font-size: calc(2vmin + 4px);
+}
+
+.helloContainer .col2 {
+  font-size: 4vmin;
 }
