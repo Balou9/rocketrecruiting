@@ -21,20 +21,15 @@ function App() {
       <Router>
         <Header/>
           <Switch>
-            <Route exact path="/">
-              <Home/>
+            <Route exact path="/" component={Home}>
             </Route>
-            <Route path="/service">
-              <Service/>
+            <Route path="/service" component={Service}>
             </Route>
-            <Route path="/developer">
-              <Developer/>
+            <Route path="/developer" component={Developer}>
             </Route>
-            <Route path="/company">
-              <Company/>
+            <Route path="/company" component={Company}>
             </Route>
-            <Route path="/hello">
-              <Hello/>
+            <Route path="/hello" component={Hello}>
             </Route>
           </Switch>
         <Footer/>
