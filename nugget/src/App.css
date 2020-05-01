@@ -1,30 +1,5 @@
 :root {
-  --dark-blue: #00203FFF;
-  --light-blue: #ADEFD1FF;
-  color: var(--dark-blue);
-}
 
-.AppContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-  background-color: var(--dark-blue);
-}
-
-.AppHeader {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  height: 10vh;
-  color: #FFFFFF;
-  z-index: 0;
-  background-color: var(--dark-blue);
-  top: 0;
 }
 
 .nuggetLink,
@@ -37,22 +12,49 @@
   text-align: center;
   justify-content: center;
   flex-basis: 100%;
-  text-decoration: none;
   font-weight: bold;
-  color: #FFFFFF;
+  text-decoration: none;
+  color: #000000;
+}
+
+.AppHeader,
+.AppFooter {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  color: #000000;
+  z-index: 0;
+  font-family: -apple-system, BlinkMacSystemFont,
+               'Segoe UI', 'Roboto', 'Oxygen',
+               'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+               sans-serif;
+}
+
+.AppHeader {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  color: #000000;
+  z-index: 0;
+  top: 0;
 }
 
 .AppFooter {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  text-align: center;
   position: fixed;
   width: 100%;
   height: 10vh;
-  color: #FFFFFF;
+  color: #000000;
   z-index: 0;
-  background-color: var(--dark-blue);
   bottom: 0;
 }
 
@@ -67,8 +69,9 @@
   padding: 10vh 0vw 10vh 0vw;
   height: 80vh;
   width: 100%;
-  background-color: var(--light-blue);
+  color: #000000;
   text-align: center;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .col1,
@@ -79,7 +82,15 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-  width: 50vw;
+  width: 80vw;
+}
+
+.jobProfiles {
+  width: 50%;
+}
+
+.serviceContainer .col2 {
+  list-style-type: none;
 }
 
 .serviceContainer .col3 {
@@ -93,13 +104,19 @@
   justify-content: center;
   height: 50%;
   width: 100%;
-  font-size: 4vmin;
   font-weight: bold;
 }
 
 .serviceCta {
+
+}
+
+.rocketDescription {
   display: flex;
   flex-direction: column;
+  height: 25%;
+  width: 100%;
+  justify-content: center;
 }
 
 .rocketHeader {
@@ -119,49 +136,61 @@
 }
 
 .developerCta,
+.companyCta {
+  width: 40%;
+}
+
+.serviceCta,
+.helloCta {
+  width: 90%;
+}
+
+.developerCta,
 .companyCta,
-.helloCta  {
+.helloCta,
+.serviceCta {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2vh 2vw 2vh 2vw;
-  border: solid 1px var(--dark-blue);
+  border: solid 1px #000000;
   border-radius: 4px;
   color: #FFFFFF;
-  background-color: var(--dark-blue);
-  height: 5vh;
-  width: 20vw;
-  font-weight: bold;
+  background-color: #000000;
+  height: 10vh;
   margin: auto;
+  text-decoration: none;
+}
+
+.contactCta {
+  color: #000000;
   text-decoration: none;
 }
 
 .developerCta:hover,
 .companyCta:hover,
-.helloCta:hover {
+.helloCta:hover.
+.serviceCta:hover {
   opacity: 0.9;
 }
 
 .developerCta:active,
 .companyCta:active,
-.helloCta:active {
+.helloCta:active,
+.serviceCta:active {
   opacity: 0.8;
 }
 
 .developerCta:visited,
 .companyCta:visited,
-.helloCta:visited {
+.helloCta:visited,
+.serviceCta:visited {
   opacity: 0.85;
-}
-
-.serviceCta,
-.contactCta,
-.githubLink  {
-  color: var(--dark-blue);
 }
 
 .githubLink {
   text-decoration: none;
+  color: #000000;
 }
 
 .serviceCta:hover,
@@ -187,123 +216,10 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-.circleFrame1 {
-  cx: 32;
-  cy: 32;
-  r: 32;
-  fill: var(--dark-blue);
-  stroke: none;
-  transform-origin: 0px 0px;
-}
-
-.circleFrame2 {
-  cx: 32;
-  cy: 32;
-  r: 30;
-  opacity: 0.5;
-  transform-origin: 0px 0px;
-  fill: none;
-  animation-name: animation-outterColorPalatte;
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.circle2 {
-  cx: 32;
-  cy: 32;
-  r: 24;
-  stroke-width: 2;
-  vector-effect: non-scaling-stroke;
-  transform-origin: 50% 50%;
-  fill: none;
-  animation-name: animation-twinner, animation-twinnerColorPalatte;
-  animation-duration: 4s,8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.circle1 {
-  cx: 32;
-  cy: 32;
-  r: 24;
-  stroke-width: 2;
-  vector-effect: non-scaling-stroke;
-  transform-origin: 50% 50%;
-  fill: none;
-  animation-name: animation-inner, animation-innerColorPalatte;
-  animation-duration: 4s,8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes animation-twinner {
-  50% {
-    transform: rotate3d(0,2,1,180deg);
-  }
-  100% {
-    transform: rotate3d(0,2,1,360deg);
-  }
-}
-
-@keyframes animation-inner {
-  50% {
-    transform: rotate3d(2,0,1,180deg);
-  }
-  100% {
-    transform: rotate3d(2,0,1,360deg);
-  }
-}
-
-@keyframes animation-outterColorPalatte {
-  0% {
-    stroke: var(--dark-blue);
-  }
-  33% {
-    stroke: #a32f80;
-  }
-  66% {
-    stroke: #ff6363;
-  }
-  100% {
-    stroke: var(--dark-blue);
-  }
-}
-
-@keyframes animation-twinnerColorPalatte {
-  0% {
-    stroke: #ff6161;
-  }
-  33% {
-    stroke: #eb7070;
-  }
-  66% {
-    stroke: var(--dark-blue);
-  }
-  100% {
-    stroke: #ff6161;
-  }
-}
-
-@keyframes animation-innerColorPalatte {
-  0% {
-    stroke: #64e291;
-  }
-  33% {
-    stroke: #eb7070;
-  }
-  66% {
-    stroke: var(--dark-blue);
-  }
-  100% {
-    stroke: #64e291;
-  }
-}
-
 /* font-size ------------------------------------- */
 
 .AppHeader {
-  font-size: calc(2vmin + 4px);
+  font-size: 2vmin;
 }
 
 .AppFooter {
@@ -312,23 +228,78 @@ svg:not(:root) {
 
 .col1 {
   font-weight: bold;
-  font-size: calc(3vmin + 2px);
+  font-size: 3vmin;
 }
 
-.col2 {
-  font-size: calc(2vmin + 4px);
+.col3 {
+  font-size: 3vmin
 }
 
-.serviceCta {
-  font-size: calc(3vmin + 2px);
+
+/* .serviceContainer .col1 {
+  font-size: 4vmin;
+} */
+/*
+.helloContainer .col1 {
+  font-size: calc(4vmin);
+} */
+
+.serviceContainer .col2 {
+  font-size: 3.4vmin;
 }
 
-.developerCta,
-.companyCta,
-.helloCta  {
-  font-size: calc(2vmin + 4px);
+
+.developerContainer .col2,
+.companyContainer .col2 {
+  font-size: 3.2vmin;
 }
 
 .helloContainer .col2 {
   font-size: 4vmin;
+}
+
+.developerContainer .col3,
+.companyContainer .col3 {
+  font-size: 3vmin;
+}
+
+.developerCta,
+.companyCta,
+.serviceCta,
+.helloCta {
+  font-size: 3vmin;
+}
+
+
+/* font-weight ------------------------------------- */
+
+.animationHeader .col1,
+.helloContainer .col1 {
+  font-weight: 600;
+}
+
+.serviceContainer .col1,
+.developerContainer .col1,
+.companyContainer .col1 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.serviceContainer .col2,
+.developerContainer .col2,
+.companyContainer .col2,
+.helloContainer .col2 {
+  font-weight: 500;
+}
+
+.col2 {
+  font-weight: 400;
+}
+
+.helloCta {
+  font-weight: bold;
+}
+
+.serviceContainer .col2 {
+  font-weight: bold;
 }
