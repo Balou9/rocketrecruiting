@@ -11,7 +11,7 @@ export class Header extends React.Component {
   render () {
     return (
       <div className="AppHeader">
-        <NavLink className="nuggetLink" to="/home" activeStyle={this.active}>Nugget Digital</NavLink>
+        <NavLink className="nuggetLink" exact to="/" activeStyle={this.active}>Nugget Digital</NavLink>
         <NavLink className="serviceLink" to="/service" activeStyle={this.active}>Service</NavLink>
         <NavLink className="developerLink" to="/developer" activeStyle={this.active}>Developer</NavLink>
         <NavLink className="companyLink" to="/company" activeStyle={this.active}>Company</NavLink>

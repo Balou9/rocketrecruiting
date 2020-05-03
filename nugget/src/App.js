@@ -19,20 +19,22 @@ import {
 function App() {
     return (
       <Router>
-        <Header/>
-          <Switch>
-              <Route path="/home" component={Home}>
-              </Route>
-              <Route path="/service" component={Service}>
-              </Route>
-              <Route path="/developer" component={Developer}>
-              </Route>
-              <Route path="/company" component={Company}>
-              </Route>
-              <Route path="/hello" component={Hello}>
-              </Route>
-          </Switch>
-        <Footer/>
+        <div className="AppContainer">
+          <Header/>
+            <Switch>
+                <Route path="/service" component={Service}>
+                </Route>
+                <Route path="/developer" component={Developer}>
+                </Route>
+                <Route path="/company" component={Company}>
+                </Route>
+                <Route path="/hello" component={Hello}>
+                </Route>
+                <Route exact path="/" component={Home}>
+                </Route>
+            </Switch>
+          <Footer/>
+        </div>
       </Router>
     );
 }

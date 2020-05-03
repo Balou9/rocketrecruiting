@@ -2,6 +2,15 @@
 
 }
 
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 .nuggetLink,
 .serviceLink,
 .developerLink,
@@ -23,7 +32,7 @@
   flex-direction: row;
   text-align: center;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   color: #000000;
   z-index: 0;
@@ -66,7 +75,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 10vh 0vw 10vh 0vw;
+  /* padding: 10vh 0vw 10vh 0vw; */
   height: 80vh;
   width: 100%;
   color: #000000;
@@ -236,14 +245,6 @@ svg:not(:root) {
 }
 
 
-/* .serviceContainer .col1 {
-  font-size: 4vmin;
-} */
-/*
-.helloContainer .col1 {
-  font-size: calc(4vmin);
-} */
-
 .serviceContainer .col2 {
   font-size: 3.4vmin;
 }
@@ -274,10 +275,7 @@ svg:not(:root) {
 /* font-weight ------------------------------------- */
 
 .animationHeader .col1,
-.helloContainer .col1 {
-  font-weight: 600;
-}
-
+.helloContainer .col1, 
 .serviceContainer .col1,
 .developerContainer .col1,
 .companyContainer .col1 {
@@ -290,10 +288,6 @@ svg:not(:root) {
 .companyContainer .col2,
 .helloContainer .col2 {
   font-weight: 500;
-}
-
-.col2 {
-  font-weight: 400;
 }
 
 .helloCta {
