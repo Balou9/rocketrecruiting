@@ -50,7 +50,7 @@
   width: 100%;
   height: 10vh;
   color: #000000;
-  z-index: 0;
+  /* z-index: 0; */
   top: 0;
 }
 
@@ -180,31 +180,26 @@
 .companyCta:hover,
 .helloCta:hover.
 .serviceCta:hover {
-  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .developerCta:active,
 .companyCta:active,
 .helloCta:active,
 .serviceCta:active {
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .developerCta:visited,
 .companyCta:visited,
 .helloCta:visited,
 .serviceCta:visited {
-  opacity: 0.85;
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .githubLink {
   text-decoration: none;
   color: #000000;
-}
-
-.serviceCta:hover,
-.contactCta:hover {
-  font-weight: bold;
 }
 
 .githubLink {
@@ -237,18 +232,16 @@ svg:not(:root) {
 
 .col1 {
   font-weight: bold;
-  font-size: 3vmin;
+  font-size: 3.1vmin;
 }
 
 .col3 {
   font-size: 3vmin
 }
 
-
 .serviceContainer .col2 {
   font-size: 3.4vmin;
 }
-
 
 .developerContainer .col2,
 .companyContainer .col2 {
@@ -275,7 +268,7 @@ svg:not(:root) {
 /* font-weight ------------------------------------- */
 
 .animationHeader .col1,
-.helloContainer .col1, 
+.helloContainer .col1,
 .serviceContainer .col1,
 .developerContainer .col1,
 .companyContainer .col1 {
@@ -290,6 +283,9 @@ svg:not(:root) {
   font-weight: 500;
 }
 
+.serviceCta,
+.developerCta,
+.companyCta,
 .helloCta {
   font-weight: bold;
 }
